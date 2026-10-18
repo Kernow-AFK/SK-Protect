@@ -8,6 +8,7 @@
 - Added a one-command combined installer for a user-supplied official AppImage; SK Protect does not download or redistribute the launcher.
 - Preserved the launcher/user secure-DNS setting after finding no technical dependency that justified forcing it off.
 - Hardened the build pipeline against overwriting an existing output and added repository-level checks.
+- Built and statically verified all four modes from the same checksum-verified official 4.0.54 AppImage; interactive graphical testing remains pending.
 
 This section describes work on a testing branch and is not a stable release declaration.
 

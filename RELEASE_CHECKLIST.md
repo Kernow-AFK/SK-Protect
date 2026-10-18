@@ -18,10 +18,10 @@
 
 ## Required verification before promotion
 
-- [ ] Build all four modes from the same untouched official AppImage.
+- [x] Build all four modes from the same untouched official AppImage; all patch guards and bundled verifiers passed. See `docs/TEST-RESULTS-2026-10-18.md`.
 - [ ] Run clean-profile startup and the full manual matrix in `docs/TESTING.md`.
 - [ ] Capture baseline-versus-patched network evidence; label observed and inferred results separately.
-- [ ] Confirm the secure-DNS correction in a real privacy and combined build.
+- [x] Confirm the secure-DNS correction in real privacy and combined builds through bundled verification; runtime settings inspection remains part of manual UI testing.
 - [ ] Verify installer and rollback on a clean Linux x86_64 environment.
 - [ ] Review UI help, keyboard navigation, contrast, screen-reader labels, and no-colour-only states interactively.
 - [ ] Test unsupported Preferred Mods reporting; current automatic path logs skips and needs user-visible reporting review.

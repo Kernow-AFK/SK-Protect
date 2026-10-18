@@ -8,6 +8,8 @@ Run `./test.sh`. It checks JavaScript and shell syntax, repository hygiene, priv
 
 Build `privacy-only`, `workflow`, `preferred-mods`, and `combined` from the same untouched official 4.0.54 Linux x86_64 AppImage. Record source hash locally, output hashes, patch output, and verification output. Confirm that the source hash does not change and every output path is new.
 
+The latest recorded automated matrix is [TEST-RESULTS-2026-10-18.md](TEST-RESULTS-2026-10-18.md).
+
 ## Manual clean-profile matrix
 
 - Untouched launcher starts from a disposable profile and remains usable.

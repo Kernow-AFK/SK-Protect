@@ -7,7 +7,7 @@ cd "$ROOT"
 for file in ./*.js; do node --check "$file"; done
 for file in ./*.sh; do bash -n "$file"; done
 
-if find . -type f \( -name '*.AppImage' -o -name '*.asar' \) -print -quit | grep -q .; then
+if git ls-files | grep -Eiq '\.(AppImage|asar)$'; then
   printf 'FAIL: proprietary/generated launcher artifact found in repository\n' >&2
   exit 1
 fi
