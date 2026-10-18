@@ -51,4 +51,8 @@ if (preloadPath) {
   failed ||= !passed;
 }
 
+const secureDnsForcedOff = source.includes('disableDiscordRpc=!0,O.secureDns=!1,O.disableAnalytics=!0');
+console.log(`${secureDnsForcedOff ? 'FAIL' : 'PASS'} secure DNS is not forcibly disabled`);
+failed ||= secureDnsForcedOff;
+
 if (failed) process.exitCode = 1;
