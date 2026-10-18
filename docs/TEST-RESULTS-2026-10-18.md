@@ -25,6 +25,10 @@ All builds used the same source and stopped on any failed guard or verifier.
 
 The privacy allowlist cases, disabled-updater state, secure-DNS preservation, workflow guards, selection/uninstall accessibility assertions, Preferred Mods data API, store behavior, compatibility-resolution hooks, new-instance hook, and combined patch interaction all passed their automated verifiers.
 
+## Fresh-clone reproduction
+
+Commit `a96a104` was cloned from GitHub into a new temporary directory and tested using the same checksum-verified source. The repository checks and all four builds/verifier suites passed again. The generated AppImage hashes differed from the first run, so the present repack process is functionally repeatable but not byte-for-byte reproducible. SquashFS or copied-file timestamps are the likely cause; the hashes above identify only the first test outputs and must not be published as universal build checksums.
+
 ## Startup attempts
 
 The untouched source and all four outputs were launched with separate empty profile roots. Every AppImage stopped before launcher code because the VM lacks `libfuse.so.2`. Extraction mode successfully enumerated the AppImage contents but could not provide a graphical run environment. The VM also has no display server or Xvfb.

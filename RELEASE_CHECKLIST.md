@@ -19,6 +19,8 @@
 ## Required verification before promotion
 
 - [x] Build all four modes from the same untouched official AppImage; all patch guards and bundled verifiers passed. See `docs/TEST-RESULTS-2026-10-18.md`.
+- [x] Clone the pushed branch into a fresh directory and reproduce all four successful builds and verifier suites.
+- [ ] Decide whether byte-for-byte reproducible AppImages are required; current clean rebuilds pass functionally but produce different hashes because build metadata is not normalized.
 - [ ] Run clean-profile startup and the full manual matrix in `docs/TESTING.md`.
 - [ ] Capture baseline-versus-patched network evidence; label observed and inferred results separately.
 - [x] Confirm the secure-DNS correction in real privacy and combined builds through bundled verification; runtime settings inspection remains part of manual UI testing.
