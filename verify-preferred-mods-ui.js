@@ -6,6 +6,7 @@ const source = fs.readFileSync(rendererPath, 'utf8');
 
 const checks = [
   ['Svelte-owned Preferred Mods page', 'function SKPPage(e,a){er(a,!0)'],
+  ['keyboard-focusable Preferred Mods help', 'data-skp-info aria-label="About Preferred Mods" title='],
   ['Preferred Mods route', 'a.currentPage==="preferredMods"'],
   ['sidebar entry', '{id:"preferredMods",label:"Preferred Mods"'],
   ['Dashboard entry point', 'data-skp-dashboard-preferred'],
