@@ -18,8 +18,8 @@ if [[ $# -eq 3 ]]; then
 else
   case "$MODE" in
     privacy-only) OUTPUT="$(dirname "$SOURCE")/SK-Protect-4.0.54-Privacy-Only.AppImage" ;;
-    workflow) OUTPUT="$(dirname "$SOURCE")/SK-Protect-4.0.54-Workflow.AppImage" ;;
-    preferred-mods) OUTPUT="$(dirname "$SOURCE")/SK-Protect-4.0.54-Preferred-Mods.AppImage" ;;
+    workflow) OUTPUT="$(dirname "$SOURCE")/SK-Protect-4.0.54-Multi-Instance-Mod-Installer.AppImage" ;;
+    preferred-mods) OUTPUT="$(dirname "$SOURCE")/SK-Protect-4.0.54-Preferred-Mods-Installer.AppImage" ;;
     combined) OUTPUT="$(dirname "$SOURCE")/SK-Protect-4.0.54-Final-1.0.AppImage" ;;
     *) printf 'Unknown patch: %s\n' "$MODE" >&2; exit 2 ;;
   esac

@@ -5,8 +5,8 @@
 Combined release of Patch 1, Patch 2, and Patch 3 for SKlauncher 4.0.54 Linux x86_64.
 
 - Privacy controls: analytics, Discord Rich Presence, automatic updater, secure-DNS setting, and selected launcher-owned background routes.
-- Workflow controls: stay-on-page installation, multi-instance installation, visible selection states, and reversible uninstall marking.
-- Preferred Mods: persistent personal mod list, fresh provider/version resolution, per-instance compatibility review, and optional automatic application after new-instance creation.
+- Multi-Instance Mod Installer: stay-on-page installation, multi-instance installation, visible selection states, and reversible uninstall marking.
+- Preferred Mods Installer: persistent personal mod list, fresh provider/version resolution, per-instance compatibility review, and optional automatic application after new-instance creation.
 - Added Dashboard, Library, Customization, sidebar, and per-instance entry points.
 - Added isolated clean-profile testing helper.
 - Kept generated AppImages, ASAR archives, accounts, worlds, instances, and extracted launcher bundles out of the repository.

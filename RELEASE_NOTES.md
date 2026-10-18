@@ -7,7 +7,7 @@ It is intended for a person who already has the official launcher installed. The
 The combined build includes:
 
 1. Privacy controls and narrower launcher-owned network policy.
-2. Content Hub and multi-instance workflow improvements.
-3. Preferred Mods, including optional automatic application to newly created instances.
+2. Multi-Instance Mod Installer: Content Hub and multi-instance workflow improvements.
+3. Preferred Mods Installer, including optional automatic application to newly created instances.
 
 The project makes no allegation that SKlauncher developers collect or sell personal data. The aim is user-controlled reduction of optional routes and convenience improvements. Review the limitations before use, keep the official source AppImage, and test a clean profile before using the patched copy with important worlds or accounts.

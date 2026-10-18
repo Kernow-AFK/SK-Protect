@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/sk-protect-hero-v1.png" alt="SK Protect artwork showing an SK Launcher-style dashboard and a shield blocking personal-data cards" width="100%">
+  <img src="images/sk-protect-overview-v1.png" alt="SK Protect artwork showing an SK Launcher-style dashboard and a shield blocking personal-data cards" width="100%">
 </p>
 
 <h1 align="center">SK Protect</h1>
@@ -7,6 +7,8 @@
 <p align="center"><strong>Independent patches for SKlauncher 4.0.54 on Linux x86_64</strong></p>
 
 <p align="center">Keep the launcher you already use. Choose only the protection and workflow improvements you want.</p>
+
+<p align="center"><em>Are you fed up with being sent away from the mod library after an install? Concerned about how many companies can correlate activity online? Want a saved bank of mods that can be applied to every new instance? These patches are for you.</em></p>
 
 > [!IMPORTANT]
 > SK Protect is an unofficial community project. It is not affiliated with or endorsed by SKlauncher, SKmedix, Mojang, or Microsoft. It does not redistribute SKlauncher. You supply the official AppImage from your own computer, and the patch creates a separate local copy.
@@ -26,8 +28,8 @@ The patch is not a firewall, anonymity tool, antivirus, or replacement for Micro
 | Download/build choice | What it does | Use this when |
 |---|---|---|
 | **Patch 1 — Privacy** | Disables launcher analytics, Discord Rich Presence, automatic updating, and selected launcher-owned background routes while retaining explicitly allowed news and public-server routes. | You want the privacy-focused launcher controls only. |
-| **Patch 2 — Workflow** | Keeps Content Hub open after installs and adds the tested multi-instance install selector with green/red/unavailable/uninstall states. | You want installation quality-of-life improvements without the privacy changes. |
-| **Patch 3 — Preferred Mods** | Saves a personal mod list, resolves compatible releases per instance, and optionally applies enabled mods after every new instance is created. | You want automatic essential/preferred mods. |
+| **Patch 2 — Multi-Instance Mod Installer** | Keeps Content Hub open after installs and adds the tested multi-instance install selector with green/red/unavailable/uninstall states. | You want installation quality-of-life improvements without the privacy changes. |
+| **Patch 3 — Preferred Mods Installer** | Saves a personal mod list, resolves compatible releases per instance, and optionally applies enabled mods after every new instance is created. | You want automatic essential/preferred mods. |
 | **Final Version 1.0 — Combined** | Applies Patch 1 + Patch 2 + Patch 3 in one guarded build. | You want the complete SK Protect experience. |
 
 The repository contains transformation scripts and verification code only. It does **not** contain the SKlauncher AppImage, ASAR, extracted launcher bundle, accounts, worlds, instances, or game data.
@@ -35,20 +37,21 @@ The repository contains transformation scripts and verification code only. It do
 ## Quick start — Final Version 1.0
 
 1. Download a fresh official **SKlauncher 4.0.54 Linux x86_64 AppImage** from the [official SKlauncher download page](https://next.skmedix.pl/downloads).
-2. Keep your original AppImage. Do not overwrite it.
-3. Make both files executable:
+2. Make a safety copy of the original AppImage and keep the original unchanged for rollback. Do not overwrite it.
+3. Download this repository with GitHub’s **Code → Download ZIP**, then extract it beside your AppImage. (You can also clone the repository with Git.)
+4. Open a terminal in the extracted `SK-Protect` folder and make both files executable:
 
 ```bash
 chmod +x SKlauncher-4.0.54.AppImage patch.sh
 ```
 
-4. Build the combined protected copy:
+5. Build the combined protected copy:
 
 ```bash
 ./patch.sh combined ./SKlauncher-4.0.54.AppImage ./SK-Protect-Final-1.0.AppImage
 ```
 
-5. Launch the new file:
+6. Launch the new file:
 
 ```bash
 ./SK-Protect-Final-1.0.AppImage
@@ -68,18 +71,18 @@ Patch 1 disables launcher analytics, Discord Rich Presence, automatic updating, 
 
 It does not block Microsoft/Mojang services, the Java game, LAN, Realms, or a mod’s own server connections.
 
-### Patch 2 — Workflow and multi-instance installation
+### Patch 2 — Multi-Instance Mod Installer
 
 ```bash
-./patch.sh workflow ./SKlauncher-4.0.54.AppImage ./SK-Protect-Workflow.AppImage
+./patch.sh workflow ./SKlauncher-4.0.54.AppImage ./SK-Protect-Multi-Instance-Mod-Installer.AppImage
 ```
 
-Patch 2 keeps the Content Hub in place after a successful background installation; allows a compatible mod to be selected for multiple existing instances; explains green **Selected**, red **Not selected**, dark-red **Not available**, and yellow **Uninstall** states; supports reversible uninstall marking and confirmation through SKlauncher’s normal manifest-aware removal route; and preserves the original single-instance installation path.
+Patch 2 keeps the Content Hub in place after a successful background installation. You are no longer sent back to the instance library as soon as a mod finishes installing, so you keep your place and can continue reading. It also allows a compatible mod to be selected for multiple existing instances; explains green **Selected**, red **Not selected**, dark-red **Not available**, and yellow **Uninstall** states; supports reversible uninstall marking and confirmation through SKlauncher’s normal manifest-aware removal route; and preserves the original single-instance installation path.
 
-### Patch 3 — Preferred Mods
+### Patch 3 — Preferred Mods Installer
 
 ```bash
-./patch.sh preferred-mods ./SKlauncher-4.0.54.AppImage ./SK-Protect-Preferred-Mods.AppImage
+./patch.sh preferred-mods ./SKlauncher-4.0.54.AppImage ./SK-Protect-Preferred-Mods-Installer.AppImage
 ```
 
 Patch 3 lets you build a personal list once and reuse it. Add individual Modrinth or CurseForge mods, enable or disable entries, review compatibility for an instance, turn individual installs off before confirming, and enable **Offer Preferred Mods for new instances** so enabled compatible mods are applied automatically after each new instance is created.
@@ -107,13 +110,11 @@ Use a new empty test directory for every run. This is for testing only; it does 
 
 ## Artwork
 
-The three supplied SK Protect images are conceptual project artwork. They illustrate the intended privacy story and do not claim that SKlauncher collects every category shown.
+<img src="images/sk-protect-conveyor-v1.png" alt="SK Protect artwork showing a launcher and protected data conveyor" width="42%" align="right">
 
-![SK Protect hero](images/sk-protect-hero-v1.png)
+The overview artwork above is the project’s main banner. The smaller illustration beside this section is an alternative visual for the individual patches. The supplied images are conceptual project artwork and do not claim that SKlauncher collects every category shown.
 
-![SK Protect conveyor](images/sk-protect-conveyor-v1.png)
-
-![SK Protect overview](images/sk-protect-overview-v1.png)
+Additional artwork is retained in [`images/`](images/) for reference.
 
 ## Repository contents
 
