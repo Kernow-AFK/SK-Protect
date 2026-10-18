@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+<title id="title">Concept A: Data stops at the shield</title><desc id="desc">A launcher on a protected local network sends small data symbols toward a shield barrier. They stop and fall harmlessly before a city of analytics offices and newspaper kiosks with empty streets and empty collection boxes.</desc>
+<defs>
+  <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#172933"/><stop offset="1" stop-color="#101c26"/></linearGradient>
+  <linearGradient id="safe" x2="1" y2="1"><stop stop-color="#183f47"/><stop offset="1" stop-color="#1a5551"/></linearGradient>
+  <linearGradient id="shield" x2="1" y2="1"><stop stop-color="#67f0c5" stop-opacity=".94"/><stop offset="1" stop-color="#5bbbe0" stop-opacity=".72"/></linearGradient>
+  <pattern id="street" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M0 48 48 0M-12 12 12-12M36 60 60 36" stroke="#d7e2dc" stroke-opacity=".035" stroke-width="1"/></pattern>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#071116" flood-opacity=".62"/></filter>
+</defs>
+<rect width="1280" height="640" rx="26" fill="url(#bg)"/>
+<path d="M0 392 1280 350v290H0Z" fill="#192a32"/><path d="M0 392 1280 350v290H0Z" fill="url(#street)"/>
+<!-- Secure local side -->
+<path d="M0 0h545l42 370L0 410Z" fill="url(#safe)" opacity=".88"/>
+<path d="M57 89h336" stroke="#85ead0" stroke-opacity=".24" stroke-width="2"/>
+<text x="62" y="73" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="700" letter-spacing="3" fill="#8ff2d3">LOCAL / PROTECTED</text>
+<g filter="url(#shadow)">
+ <rect x="88" y="168" width="318" height="190" rx="15" fill="#111d25" stroke="#b1ded0" stroke-opacity=".7" stroke-width="2"/>
+ <rect x="88" y="168" width="318" height="34" rx="15" fill="#263e44"/><path d="M88 189h318v13H88Z" fill="#263e44"/>
+ <circle cx="111" cy="185" r="5" fill="#f2bd6b"/><circle cx="130" cy="185" r="5" fill="#63e0b8"/><circle cx="149" cy="185" r="5" fill="#78bcd4"/>
+ <rect x="112" y="223" width="95" height="106" rx="10" fill="#245c57"/><path d="m160 240 29 11v24c0 24-12 39-29 49-17-10-29-25-29-49v-24Z" fill="#7af0ca"/><path d="M150 277v-8a10 10 0 0 1 20 0v8" fill="none" stroke="#153e42" stroke-width="4" stroke-linecap="round"/><rect x="146" y="275" width="28" height="24" rx="5" fill="#183b42"/><circle cx="160" cy="286" r="3" fill="#7af0ca"/>
+ <text x="226" y="250" font-family="DejaVu Sans,sans-serif" font-size="18" font-weight="700" fill="#f0f6f1">SKlauncher</text>
+ <text x="226" y="276" font-family="DejaVu Sans,sans-serif" font-size="13" fill="#a9c4bf">LOCAL APP + PLAYER DATA</text>
+ <rect x="225" y="300" width="145" height="8" rx="4" fill="#3b5559"/><rect x="225" y="300" width="92" height="8" rx="4" fill="#67e4bd"/>
+ <text x="225" y="335" font-family="DejaVu Sans,sans-serif" font-size="12" fill="#80a19c">Private settings stay local</text>
+</g>
+<!-- Data stream that ends at barrier -->
+<path d="M414 263c58-46 74 45 129 1M414 299c52 42 77-37 129 0M414 333c56-26 75 27 129-4" fill="none" stroke="#f1bd6b" stroke-opacity=".62" stroke-width="3" stroke-dasharray="3 11"/>
+<g fill="#ffd27d" filter="url(#glow)"><circle cx="440" cy="248" r="5"/><rect x="465" y="282" width="10" height="10" rx="2"/><circle cx="494" cy="314" r="4"/><path d="M519 252h13v13h-13z"/><circle cx="531" cy="323" r="5"/><rect x="505" y="276" width="8" height="8" rx="2"/></g>
+<!-- The backstop shield -->
+<g filter="url(#shadow)">
+ <path d="M586 90 720 139v112c0 112-62 186-134 227-72-41-134-115-134-227V139Z" fill="url(#shield)" stroke="#dcfff2" stroke-width="4"/>
+ <path d="M586 119 692 157v94c0 86-44 146-106 184-62-38-106-98-106-184v-94Z" fill="#17343f" stroke="#ccffed" stroke-opacity=".75" stroke-width="2"/>
+ <path d="m528 273 39 39 81-91" fill="none" stroke="#7af0ca" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M453 197h-18m18 55h-36m36 57h-18" stroke="#fff0bd" stroke-width="4" stroke-linecap="round"/>
+ <circle cx="435" cy="197" r="5" fill="#ffd27d"/><circle cx="417" cy="252" r="5" fill="#ffd27d"/><circle cx="435" cy="309" r="5" fill="#ffd27d"/>
+</g>
+<text x="586" y="526" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="#8ff2d3">NO DATA PASSES</text>
+<!-- External waiting side -->
+<path d="M750 0h530v351l-557 27Z" fill="#233038"/>
+<text x="797" y="73" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="700" letter-spacing="3" fill="#c7d0cc">OUTSIDE / EMPTY</text>
+<!-- corporate recipients -->
+<g opacity=".92">
+ <path d="M792 178h98v196h-98z" fill="#38464a"/><path d="M807 153h71v25h-71z" fill="#455457"/>
+ <path d="M912 127h112v247H912z" fill="#303f43"/><path d="M933 102h70v25h-70z" fill="#425256"/>
+ <path d="M1045 193h91v181h-91z" fill="#38464a"/><path d="M1061 171h59v22h-59z" fill="#455457"/>
+ <path d="M1152 157h78v217h-78z" fill="#303f43"/>
+ <g fill="#79877f" opacity=".37"><path d="M810 205h12v17h-12zm27 0h12v17h-12zm27 0h12v17h-12zM810 240h12v17h-12zm27 0h12v17h-12zm27 0h12v17h-12zM932 153h14v18h-14zm31 0h14v18h-14zm31 0h14v18h-14zM932 191h14v18h-14zm31 0h14v18h-14zm31 0h14v18h-14zM932 229h14v18h-14zm31 0h14v18h-14zm31 0h14v18h-14zM1062 218h12v17h-12zm28 0h12v17h-12zm-28 36h12v17h-12zm28 0h12v17h-12zM1168 184h13v18h-13zm28 0h13v18h-13zm-28 36h13v18h-13zm28 0h13v18h-13z"/></g>
+</g>
+<!-- Empty news kiosk / unread papers -->
+<g transform="translate(796 395)"><path d="M0 0h143v95H0z" fill="#d7dfd8"/><path d="M-8 0h158v17H-8z" fill="#f0bd67"/><path d="M12 29h118v52H12z" fill="#f6f4eb" stroke="#acb8b1"/><text x="71" y="49" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="11" font-weight="700" fill="#657775">NEWS STAND</text><path d="M28 60h85m-85 7h60" stroke="#cbd5cc" stroke-width="3"/><text x="71" y="105" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="11" fill="#a9b4ae">PAPERS, NOT PLAYER DATA</text></g>
+<!-- Empty collection inbox -->
+<g transform="translate(1045 417)"><path d="M0 21 87 0l87 21v54H0Z" fill="#39484b" stroke="#84908b" stroke-width="2"/><path d="M0 21h174M18 21v54m138-54v54" stroke="#87938d" stroke-width="2"/><rect x="55" y="35" width="64" height="28" rx="4" fill="#263235" stroke="#78847e"/><path d="M73 49h28" stroke="#c4cec7" stroke-width="2"/><text x="87" y="101" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="12" font-weight="700" fill="#c5ceca">EMPTY INBOX</text></g>
+<!-- Quiet street foreground -->
+<path d="M0 526 1280 502v138H0Z" fill="#121e26"/><path d="M0 526 1280 502v138H0Z" fill="url(#street)"/>
+<path d="m643 536 92-2-35 106h-100Zm116-2 52-2 64 112h-79Z" fill="#dce5dc" opacity=".07"/><path d="M697 551h22m-40 34h24m-44 32h29" stroke="#d1c28f" stroke-width="4" stroke-linecap="round" opacity=".65"/>
+<text x="640" y="606" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="14" fill="#b7c5be">Quiet streets. Empty inboxes. No player data delivered.</text>
+<rect x="1" y="1" width="1278" height="638" rx="25" fill="none" stroke="#aec9bf" stroke-opacity=".35" stroke-width="2"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="760" viewBox="0 0 1440 760" role="img" aria-labelledby="title desc">
+<title id="title">Concept 2: The data conveyor ends here</title>
+<desc id="desc">Bright data boxes travel from a launcher on a conveyor belt, then fall into a secure destruction unit before reaching waiting data brokers. A small guardian mascot oversees the stop.</desc>
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#15192f"/><stop offset="1" stop-color="#262449"/></linearGradient>
+ <linearGradient id="belt" x2="0" y2="1"><stop stop-color="#53627c"/><stop offset="1" stop-color="#252b45"/></linearGradient>
+ <linearGradient id="crusher" x2="1" y2="1"><stop stop-color="#ff6e87"/><stop offset="1" stop-color="#ffb14f"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="13" stdDeviation="13" flood-color="#080b18" flood-opacity=".65"/></filter>
+ <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1440" height="760" rx="28" fill="url(#bg)"/>
+<path d="M0 0h1440v505H0Z" fill="#202442"/><path d="M0 505h1440v255H0Z" fill="#171a31"/>
+<text x="68" y="68" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="700" letter-spacing="3" fill="#74f5df">LOCAL DATA / CONTROLLED ROUTE</text>
+<!-- launcher -->
+<g filter="url(#shadow)"><rect x="72" y="172" width="242" height="194" rx="16" fill="#10172a" stroke="#48d6ff" stroke-width="3"/><path d="M72 211h242" stroke="#3a4b68" stroke-width="2"/><circle cx="96" cy="192" r="6" fill="#ff708d"/><circle cx="118" cy="192" r="6" fill="#ffd25f"/><circle cx="140" cy="192" r="6" fill="#65f0bf"/><path d="m145 235 38 14v33c0 35-16 56-38 70-22-14-38-35-38-70v-33Z" fill="#67f0c7"/><path d="M132 279v-9a13 13 0 0 1 26 0v9" fill="none" stroke="#17364b" stroke-width="5"/><rect x="127" y="277" width="36" height="31" rx="6" fill="#17364b"/><circle cx="145" cy="291" r="4" fill="#b7ff4f"/><text x="198" y="251" font-family="DejaVu Sans,sans-serif" font-size="18" font-weight="700" fill="#f5f3ff">SKlauncher</text><text x="198" y="277" font-family="DejaVu Sans,sans-serif" font-size="11" font-weight="700" fill="#64e9d4">PROTECTED</text><path d="M198 306h83m-83 18h65" stroke="#5c6680" stroke-width="6" stroke-linecap="round"/></g>
+<!-- conveyor belt -->
+<path d="M280 418h728l85 97H326Z" fill="url(#belt)" stroke="#8798bb" stroke-width="3"/><path d="M313 440h676" stroke="#b7c3d7" stroke-width="3" stroke-dasharray="20 22" opacity=".6"/><g fill="#9ca9bd"><circle cx="355" cy="505" r="13"/><circle cx="486" cy="505" r="13"/><circle cx="617" cy="505" r="13"/><circle cx="748" cy="505" r="13"/><circle cx="879" cy="505" r="13"/></g>
+<!-- bright boxed packets -->
+<g filter="url(#shadow)" font-family="DejaVu Sans,sans-serif" font-weight="700" text-anchor="middle">
+ <g transform="translate(366 330)"><path d="M0 22 59 0l61 20-60 25Z" fill="#ffc84e"/><path d="M0 22v67l60 25V45Z" fill="#f07c58"/><path d="M60 45v69l60-25V20Z" fill="#ff9b49"/><text x="60" y="79" font-size="14" fill="#40253c">ID</text></g>
+ <g transform="translate(568 314)"><path d="M0 22 59 0l61 20-60 25Z" fill="#5be6ff"/><path d="M0 22v67l60 25V45Z" fill="#448bfa"/><path d="M60 45v69l60-25V20Z" fill="#44c5df"/><text x="60" y="79" font-size="14" fill="#132c51">USAGE</text></g>
+ <g transform="translate(770 303)"><path d="M0 22 59 0l61 20-60 25Z" fill="#d68bff"/><path d="M0 22v67l60 25V45Z" fill="#8c67ef"/><path d="M60 45v69l60-25V20Z" fill="#ba65dc"/><text x="60" y="79" font-size="14" fill="#251e50">PROFILE</text></g>
+</g>
+<!-- belt end and secure destruction bay -->
+<g filter="url(#shadow)"><path d="M1050 200h235v289h-235z" fill="#2c3657" stroke="#a8b4d4" stroke-width="3"/><path d="M1032 193h271v32h-271z" fill="#ff687f"/><text x="1167" y="249" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="#fff0f3">SECURE DISPOSAL</text><path d="M1081 280h173v25h-173z" fill="url(#crusher)"/><path d="M1091 305v62l42 50 34-52 39 54 38-50v-64Z" fill="#11192c" stroke="#ff8d88" stroke-width="3"/><path d="m1113 325 22 22m-22 0 22-22m63 9 23 24m-23 0 23-24m32 19 20 20m-20 0 20-20" stroke="#ffcd61" stroke-width="6" stroke-linecap="round"/><text x="1167" y="445" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="12" font-weight="700" fill="#a8f5df">DESTROYED / NOT DELIVERED</text></g>
+<!-- falling boxes and fragments -->
+<g transform="translate(971 442) rotate(24)"><path d="M0 10 30 0l30 10-30 13Z" fill="#5be6ff"/><path d="M0 10v34l30 13V23Z" fill="#448bfa"/><path d="M30 23v34l30-13V10Z" fill="#44c5df"/></g><g fill="#ffca56" filter="url(#glow)"><path d="m997 523 10-18 10 18Z"/><circle cx="1061" cy="529" r="7"/><path d="m1016 550h12v12h-12z"/><circle cx="1044" cy="572" r="5"/></g>
+<!-- mascot: rounded pixel sentinel -->
+<g transform="translate(100 515)" filter="url(#shadow)"><rect x="0" y="30" width="120" height="103" rx="28" fill="#9aff56" stroke="#e2ffba" stroke-width="4"/><rect x="22" y="0" width="76" height="74" rx="23" fill="#b8ff6a" stroke="#e2ffba" stroke-width="4"/><rect x="39" y="28" width="12" height="17" rx="6" fill="#182c49"/><rect x="69" y="28" width="12" height="17" rx="6" fill="#182c49"/><path d="M44 55q16 14 32 0" fill="none" stroke="#284364" stroke-width="5" stroke-linecap="round"/><path d="M-10 73h18m104 0h18" stroke="#b8ff6a" stroke-width="12" stroke-linecap="round"/><path d="M28 132v23m64-23v23" stroke="#b8ff6a" stroke-width="15" stroke-linecap="round"/><path d="m40 82 20 8 20-8" fill="none" stroke="#228d8d" stroke-width="4"/><text x="60" y="117" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="9" font-weight="700" fill="#17334d">GUARD</text></g>
+<path d="M215 584c205 83 487 89 730 12" fill="none" stroke="#78f3d6" stroke-width="3" stroke-dasharray="4 13"/><text x="732" y="685" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="18" font-weight="700" letter-spacing="1" fill="#e8e9ff">THE BELT STOPS. THE BOXES ARE DESTROYED. NOTHING GETS OUT.</text>
+<rect x="1" y="1" width="1438" height="758" rx="27" fill="none" stroke="#7776b7" stroke-opacity=".5" stroke-width="2"/>
+</svg>

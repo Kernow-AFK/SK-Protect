@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="520" viewBox="0 0 1500 520" role="img" aria-labelledby="title desc">
+  <title id="title">SKlauncher Privacy Edition</title>
+  <desc id="desc">A privacy-first launcher patch project with local controls and deliberate network boundaries.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101a24"/><stop offset="1" stop-color="#132e35"/></linearGradient>
+    <linearGradient id="glass" x2="1" y2="1"><stop stop-color="#1e3d48"/><stop offset="1" stop-color="#19303a"/></linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#a4ddd0" stroke-opacity=".075"/></pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#061014" flood-opacity=".55"/></filter>
+  </defs>
+  <rect width="1500" height="520" rx="22" fill="url(#bg)"/>
+  <rect width="1500" height="520" rx="22" fill="url(#grid)"/>
+  <path d="M0 414 220 338l158 58 208-121 183 67 202-151 249 100 280-147v356H0Z" fill="#18353c" opacity=".54"/>
+  <g opacity=".9" fill="#46d6b3"><rect x="1054" y="90" width="22" height="22"/><rect x="1110" y="90" width="22" height="22" opacity=".38"/><rect x="1166" y="90" width="22" height="22" opacity=".18"/><rect x="1054" y="146" width="22" height="22" opacity=".42"/><rect x="1166" y="146" width="22" height="22" opacity=".55"/><rect x="1222" y="146" width="22" height="22" opacity=".22"/><rect x="1054" y="202" width="22" height="22" opacity=".2"/><rect x="1110" y="202" width="22" height="22" opacity=".62"/><rect x="1222" y="202" width="22" height="22" opacity=".36"/></g>
+  <g filter="url(#shadow)" transform="translate(1060 258)">
+    <circle cx="120" cy="104" r="126" fill="#12272f" stroke="#62e2bf" stroke-opacity=".28" stroke-width="2"/>
+    <path d="M120 18 198 48v61c0 56-35 99-78 121-43-22-78-65-78-121V48Z" fill="#46d6b3"/>
+    <path d="M120 43 176 64v45c0 39-22 70-56 91-34-21-56-52-56-91V64Z" fill="#143942"/>
+    <path d="M97 106v-9a23 23 0 0 1 46 0v9" fill="none" stroke="#a9f4dc" stroke-width="9" stroke-linecap="round"/>
+    <rect x="88" y="103" width="64" height="54" rx="9" fill="#f0b75e"/>
+    <circle cx="120" cy="127" r="6" fill="#18343b"/><path d="M120 132v10" stroke="#18343b" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="120" cy="104" r="151" fill="none" stroke="#f0b75e" stroke-opacity=".32" stroke-dasharray="4 12" stroke-width="2"/>
+  </g>
+  <g fill="#a9f4dc"><circle cx="1000" cy="355" r="5"/><circle cx="1330" cy="294" r="4"/><circle cx="950" cy="211" r="3"/><path d="M1004 355h-92m418-61h-30m-350-83h-60" stroke="#46d6b3" stroke-opacity=".44" stroke-dasharray="3 8"/></g>
+  <g font-family="DejaVu Sans, sans-serif">
+    <text x="104" y="120" fill="#a9f4dc" font-size="18" font-weight="700" letter-spacing="3">LOCAL-FIRST PATCH PROJECT</text>
+    <text x="100" y="215" fill="#f3f7f4" font-size="64" font-weight="700">SKlauncher</text>
+    <text x="101" y="286" fill="#46d6b3" font-size="52" font-weight="700">Privacy Edition</text>
+    <text x="104" y="350" fill="#d2e1dc" font-size="25">Keep your Minecraft data private.</text>
+    <rect x="104" y="399" width="290" height="2" fill="#f0b75e"/>
+    <text x="104" y="442" fill="#9fb8b3" font-size="17">PATCHES  /  TRANSPARENCY  /  USER CONTROL</text>
+  </g>
+  <rect x="1" y="1" width="1498" height="518" rx="21" fill="none" stroke="#7ed9c1" stroke-opacity=".28" stroke-width="2"/>
+</svg>

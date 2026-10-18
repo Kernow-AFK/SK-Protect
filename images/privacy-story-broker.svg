@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="760" viewBox="0 0 1440 760" role="img" aria-labelledby="title desc">
+<title id="title">Concept 1: The broker gets nothing</title>
+<desc id="desc">A colorful stream of personal-data symbols leaves a launcher, hits a bright privacy shield, and falls harmlessly away. A fictional, dark-coated data broker waits with rubbing long fingers and receives nothing.</desc>
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#17162d"/><stop offset="1" stop-color="#29244e"/></linearGradient>
+ <linearGradient id="left" x2="1" y2="1"><stop stop-color="#173d68"/><stop offset="1" stop-color="#1d526f"/></linearGradient>
+ <linearGradient id="shield" x2="1" y2="1"><stop stop-color="#58f2cb"/><stop offset=".52" stop-color="#46c8ff"/><stop offset="1" stop-color="#b7ff4f"/></linearGradient>
+ <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#090917" flood-opacity=".65"/></filter>
+ <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.5" fill="#d8eaff" opacity=".14"/></pattern>
+</defs>
+<rect width="1440" height="760" rx="28" fill="url(#sky)"/><rect width="1440" height="760" rx="28" fill="url(#dots)"/>
+<path d="M0 0h575l48 495L0 570Z" fill="url(#left)"/><path d="M0 570 1440 520v240H0Z" fill="#15172c"/>
+<text x="72" y="66" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="700" letter-spacing="3" fill="#82f9de">SKLAUNCHER / LOCAL SIDE</text>
+<text x="843" y="66" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="700" letter-spacing="3" fill="#ffc66d">DATA BROKER / WAITING</text>
+<!-- launcher console -->
+<g filter="url(#shadow)"><rect x="72" y="198" width="332" height="222" rx="18" fill="#121729" stroke="#56e5dc" stroke-width="3"/><path d="M72 235h332" stroke="#344568" stroke-width="2"/><circle cx="97" cy="217" r="6" fill="#ff776d"/><circle cx="119" cy="217" r="6" fill="#ffd05f"/><circle cx="141" cy="217" r="6" fill="#6df0ba"/><rect x="98" y="263" width="86" height="112" rx="12" fill="#193a63"/><path d="m141 278 27 10v24c0 25-12 42-27 53-15-11-27-28-27-53v-24Z" fill="#75f3d1"/><path d="M132 315v-8a9 9 0 0 1 18 0v8" fill="none" stroke="#173249" stroke-width="4"/><rect x="128" y="313" width="26" height="22" rx="5" fill="#173249"/><circle cx="141" cy="323" r="3" fill="#b7ff4f"/><text x="205" y="284" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="700" fill="#f2f3ff">SKlauncher</text><text x="205" y="311" font-family="DejaVu Sans,sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#6df0d4">PRIVATE BY DEFAULT</text><path d="M205 340h165m-165 18h128m-128 18h94" stroke="#57708e" stroke-width="7" stroke-linecap="round"/><text x="98" y="397" font-family="DejaVu Sans,sans-serif" font-size="12" fill="#b7d5e9">PLAYER DATA STAYS LOCAL</text></g>
+<!-- colorful stream -->
+<path d="M408 292c61-67 85 65 144 0m-144 42c63 56 86-56 144 1m-144 41c55-30 86 40 144 4" fill="none" stroke="#ffbd5c" stroke-width="5" stroke-dasharray="3 14" stroke-linecap="round"/>
+<g filter="url(#glow)"><circle cx="433" cy="279" r="8" fill="#ff6fae"/><rect x="461" y="313" width="15" height="15" rx="4" fill="#b7ff4f"/><path d="M488 348h18v18h-18z" fill="#49d9ff"/><circle cx="530" cy="297" r="8" fill="#ffd05f"/><path d="m533 371 10-17 10 17Z" fill="#ff6fae"/></g>
+<!-- shield barrier -->
+<g filter="url(#shadow)"><path d="M623 123 767 175v141c0 129-67 211-144 257-77-46-144-128-144-257V175Z" fill="url(#shield)" stroke="#e7fff8" stroke-width="5"/><path d="M623 156 735 197v119c0 97-44 163-112 207-68-44-112-110-112-207V197Z" fill="#192342" stroke="#dbfff5" stroke-opacity=".8" stroke-width="2"/><path d="m565 317 43 43 80-93" fill="none" stroke="#8cffd9" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="623" y="557" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#8cffd9">DATA STOPPED HERE</text>
+<!-- fictional broker -->
+<g transform="translate(1035 161)" filter="url(#shadow)">
+ <!-- coat --> <path d="M46 182 83 151h97l42 31 42 230H2Z" fill="#151522" stroke="#57456f" stroke-width="3"/><path d="m83 151 48 53-34 208H24l54-176Zm97 0-49 53 35 208h68l-54-176Z" fill="#30243e"/><path d="m126 208 27 0-11 71-17 21-17-21Z" fill="#ff5f90"/>
+ <!-- neck and face --> <path d="M91 154v-34h72v38" fill="#dca276"/><path d="M71 83c0-54 25-78 66-78 49 0 71 32 66 84l-25 55-49 25-48-26Z" fill="#edb58b"/>
+ <!-- slick hair --> <path d="M68 91C54 30 88-3 138 1c42 3 68 31 66 77l-19-26-28-17-53 18-27 38Z" fill="#21182b"/><path d="m68 68-28 9 22 19m143-25 26 8-22 18" fill="#21182b"/>
+ <!-- crooked long nose --> <path d="m134 69 17 27-13 14 23 5" fill="none" stroke="#bd775f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+ <!-- eyes and mischievous brows --> <path d="m94 66 29-9m41 1 27 8" stroke="#3c2832" stroke-width="7" stroke-linecap="round"/><ellipse cx="108" cy="81" rx="5" ry="8" fill="#211b28"/><ellipse cx="171" cy="82" rx="5" ry="8" fill="#211b28"/>
+ <!-- grin --> <path d="M92 117q47 41 99-1-5 43-50 46-37-3-49-45Z" fill="#fff1d3" stroke="#633344" stroke-width="4"/><path d="M103 133h73" stroke="#b95276" stroke-width="3"/>
+ <!-- long hands rubbing --> <path d="M30 225c37-45 73-41 112-12m-95 49c40-49 81-52 128-22" fill="none" stroke="#edb58b" stroke-width="14" stroke-linecap="round"/><path d="m35 213-22-28m36 16-13-36m77 43 25-24m-18 43 33-15m-128 87-27-17m53 17-28-31m133 17 30-23m-55 29 39-8" stroke="#edb58b" stroke-width="9" stroke-linecap="round"/>
+ <path d="M48 172 80 151m111 0 31 22" stroke="#f2c7a4" stroke-width="5"/>
+</g>
+<!-- empty collector case -->
+<g transform="translate(1248 416)"><path d="M0 24 68 0l68 24v91H0Z" fill="#3a3750" stroke="#ffbe69" stroke-width="3"/><path d="M0 24h136M17 24v91m102-91v91" stroke="#90859f" stroke-width="2"/><rect x="40" y="51" width="56" height="27" rx="5" fill="#201e32" stroke="#ff7b9f"/><path d="M54 64h29" stroke="#ffd877" stroke-width="3"/><text x="68" y="139" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="12" font-weight="700" fill="#ffc66d">EMPTY</text></g>
+<text x="718" y="695" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="17" font-weight="700" letter-spacing="1" fill="#e4e9ff">THE BROKER WAITS. THE DATA NEVER ARRIVES.</text>
+<rect x="1" y="1" width="1438" height="758" rx="27" fill="none" stroke="#8c8acb" stroke-opacity=".5" stroke-width="2"/>
+</svg>

@@ -1,0 +1,13 @@
+# Never commit vendor binaries, extracted runtime files, or user profiles.
+/backups/
+/work/
+/test-profile*/
+/*.AppImage
+accounts.json
+accounts.json.bak
+settings.json
+settings.json.bak
+instances.json
+instances.json.bak
+*.asar
+*.squashfs

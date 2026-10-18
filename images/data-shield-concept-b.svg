@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+<title id="title">Concept B: The guarded doorway</title><desc id="desc">A local launcher and its private data sit behind a guarded doorway. An abstract protector braces a shield while glowing data streams are turned back. Across the quiet boundary, generic corporate offices wait beside a newspaper stand, but its mailboxes remain empty.</desc>
+<defs>
+ <linearGradient id="back" x2="1" y2="1"><stop stop-color="#edf2ec"/><stop offset="1" stop-color="#d9e2da"/></linearGradient>
+ <linearGradient id="vault" x2="0" y2="1"><stop stop-color="#1e4547"/><stop offset="1" stop-color="#162b34"/></linearGradient>
+ <linearGradient id="shield" x2="1" y2="1"><stop stop-color="#73e9c4"/><stop offset="1" stop-color="#4eb6ca"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#15282c" flood-opacity=".25"/></filter>
+ <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="grain" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="4" cy="6" r="1" fill="#234448" opacity=".08"/><circle cx="18" cy="19" r="1" fill="#234448" opacity=".06"/></pattern>
+</defs>
+<rect width="1280" height="640" rx="26" fill="url(#back)"/><rect width="1280" height="640" rx="26" fill="url(#grain)"/>
+<!-- Left vault -->
+<path d="M0 0h505v480H0Z" fill="url(#vault)"/>
+<path d="M0 480h505v160H0Z" fill="#14252d"/>
+<path d="M65 82h345" stroke="#7ce9c8" stroke-opacity=".48" stroke-width="2"/>
+<text x="66" y="65" font-family="DejaVu Sans,sans-serif" font-size="15" font-weight="700" letter-spacing="3" fill="#9bf1d7">YOUR DEVICE / YOUR CONTROL</text>
+<!-- Local launcher console -->
+<g filter="url(#shadow)">
+ <rect x="79" y="174" width="283" height="187" rx="13" fill="#f3f4ec"/>
+ <rect x="79" y="174" width="283" height="32" rx="13" fill="#35565a"/><path d="M79 194h283v12H79z" fill="#35565a"/>
+ <circle cx="101" cy="190" r="4" fill="#edb966"/><circle cx="117" cy="190" r="4" fill="#73e9c4"/>
+ <rect x="99" y="224" width="80" height="109" rx="8" fill="#d6e7dc"/>
+ <path d="m139 240 25 9v20c0 22-10 37-25 46-15-9-25-24-25-46v-20Z" fill="#178c78"/><path d="M131 270v-6a8 8 0 0 1 16 0v6" fill="none" stroke="#ecf5ed" stroke-width="3.5"/><rect x="128" y="268" width="22" height="20" rx="4" fill="#ecf5ed"/><circle cx="139" cy="278" r="2.5" fill="#178c78"/>
+ <text x="196" y="246" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="700" fill="#19343a">SKlauncher</text><text x="196" y="268" font-family="DejaVu Sans,sans-serif" font-size="11" font-weight="700" fill="#54726d">PRIVACY EDITION</text>
+ <path d="M196 291h135m-135 15h108m-108 15h78" stroke="#b4c5bc" stroke-width="5" stroke-linecap="round"/>
+</g>
+<text x="220" y="405" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="13" fill="#a5c7bd">ACCOUNT + WORLDS + INSTANCE DATA STAY HERE</text>
+<!-- Directional stream and hand-back arcs -->
+<path d="M371 227c71-4 101 33 140 52M371 261c58 6 99 38 140 39M371 296c69 19 93 48 140 34" fill="none" stroke="#d18b36" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 11"/>
+<g fill="#e6a746" filter="url(#soft)"><circle cx="392" cy="226" r="5"/><rect x="414" y="250" width="9" height="9" rx="2"/><circle cx="438" cy="273" r="5"/><rect x="457" y="294" width="10" height="10" rx="2"/><circle cx="487" cy="312" r="5"/><path d="M414 300h9v9h-9z"/></g>
+<!-- The protector figure, bracing the shield -->
+<g filter="url(#shadow)">
+ <!-- torso, abstract guardian suit -->
+ <path d="M501 366c10-69 41-106 85-106s77 37 87 106l-34 57H535Z" fill="#d9e8dd" stroke="#739f91" stroke-width="3"/>
+ <path d="M554 279c5-30 18-45 33-45s28 15 33 45" fill="#b9d9cd"/>
+ <circle cx="588" cy="218" r="31" fill="#f1c794"/>
+ <path d="M557 215c4-27 20-40 38-40 18 0 31 13 34 35-13-8-31-13-50-8l-22 13Z" fill="#23454b"/>
+ <!-- arms braced on shield -->
+ <path d="M522 301c-40 4-60 34-79 56l29 24c24-19 43-31 66-33" fill="none" stroke="#d7e8dc" stroke-width="27" stroke-linecap="round"/>
+ <path d="M646 299c33 6 49 25 66 45" fill="none" stroke="#d7e8dc" stroke-width="27" stroke-linecap="round"/>
+ <circle cx="464" cy="377" r="15" fill="#f1c794"/><circle cx="711" cy="345" r="15" fill="#f1c794"/>
+ <!-- chest mark -->
+ <path d="m588 305 18 7v14c0 13-7 22-18 29-11-7-18-16-18-29v-14Z" fill="#178c78"/><path d="m580 326 6 6 11-13" fill="none" stroke="#effaf1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- Shield panel in front of the figure -->
+<g filter="url(#shadow)">
+ <path d="M718 117 824 155v97c0 95-48 156-106 191-58-35-106-96-106-191v-97Z" fill="url(#shield)" stroke="#f4fff7" stroke-width="4"/>
+ <path d="M718 143 797 171v80c0 72-32 120-79 153-47-33-79-81-79-153v-80Z" fill="#173d43" stroke="#ddfff0" stroke-opacity=".75" stroke-width="2"/>
+ <path d="m674 258 31 31 61-69" fill="none" stroke="#82f2ce" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="718" y="472" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#376960">BLOCKED AT THE DOOR</text>
+<!-- Right: offices and news kiosk, no incoming data -->
+<path d="M844 0h436v480H844Z" fill="#cbd6ce"/>
+<text x="900" y="65" font-family="DejaVu Sans,sans-serif" font-size="15" font-weight="700" letter-spacing="3" fill="#52635f">CORPORATE OFFICES / NO DATA</text>
+<g opacity=".92">
+ <path d="M896 162h95v234h-95z" fill="#75847f"/><path d="M908 135h71v27h-71z" fill="#687a74"/>
+ <path d="M1008 110h112v286h-112z" fill="#64766f"/><path d="M1023 86h83v24h-83z" fill="#526761"/>
+ <path d="M1136 175h97v221h-97z" fill="#75847f"/><path d="M1150 149h69v26h-69z" fill="#687a74"/>
+ <g fill="#dbe3db" opacity=".54"><path d="M914 183h12v17h-12zm26 0h12v17h-12zm26 0h12v17h-12zM914 217h12v17h-12zm26 0h12v17h-12zm26 0h12v17h-12zM1027 133h14v18h-14zm31 0h14v18h-14zm31 0h14v18h-14zM1027 170h14v18h-14zm31 0h14v18h-14zm31 0h14v18h-14zM1027 207h14v18h-14zm31 0h14v18h-14zm31 0h14v18h-14zM1153 197h13v17h-13zm28 0h13v17h-13zm28 0h13v17h-13zM1153 232h13v17h-13zm28 0h13v17h-13zm28 0h13v17h-13z"/></g>
+</g>
+<!-- Newspaper stand -->
+<g transform="translate(900 418)" filter="url(#shadow)"><path d="M0 0h143v87H0z" fill="#33474a"/><path d="M-8 0h159v15H-8z" fill="#e2a84e"/><rect x="13" y="28" width="117" height="46" rx="3" fill="#f5f2e8"/><text x="71" y="46" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="10" font-weight="700" fill="#586762">DAILY NEWS</text><path d="M27 54h89m-89 7h66" stroke="#c7d0c7" stroke-width="3"/><text x="71" y="103" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="10" fill="#455854">NO PERSONAL DATA</text></g>
+<!-- Empty drop box -->
+<g transform="translate(1094 427)"><path d="M0 15 67 0l67 15v59H0Z" fill="#50635f"/><path d="M0 15h134M15 15v59m104-59v59" stroke="#a3b0a8" stroke-width="2"/><rect x="42" y="34" width="50" height="21" rx="4" fill="#314543" stroke="#b2beb5"/><path d="M55 44h24" stroke="#dce4dc" stroke-width="2"/><text x="67" y="99" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="11" font-weight="700" fill="#40544f">INBOX EMPTY</text></g>
+<!-- calm street and broken packet route -->
+<path d="M0 488h1280v152H0Z" fill="#23343a"/><path d="M0 488h1280v152H0Z" fill="url(#grain)"/>
+<path d="M0 552 1278 515" stroke="#94a49b" stroke-opacity=".35" stroke-width="2"/><path d="M762 515h85m72-3h80m92-3h70" stroke="#f1d59c" stroke-width="4" stroke-linecap="round" stroke-dasharray="14 15" opacity=".6"/>
+<text x="640" y="593" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700" letter-spacing="1" fill="#d9e7de">A GUARDED DOORWAY. A QUIET STREET. NOTHING DELIVERED.</text>
+<rect x="1" y="1" width="1278" height="638" rx="25" fill="none" stroke="#667b73" stroke-opacity=".42" stroke-width="2"/>
+</svg>
