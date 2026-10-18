@@ -138,4 +138,4 @@ See [CHANGELOG.md](CHANGELOG.md) for release history and [RELEASE_NOTES.md](RELE
 
 If you contact the SKlauncher developers, please be aware that this is an independent project, not something developed by them. We welcome their comments and technical review. We do not claim to have their permission to create this patch, and we have not redistributed their proprietary code or the launcher itself.
 
-For project feedback, contact **Kerno-Python-AFK@protonmail.com**. Please use the GitHub repository for downloads, issue reports, and release history; the email address is only an alternative contact route.
+For project feedback, contact **Kernow-AFK@protonmail.com**. Please use the GitHub repository for downloads, issue reports, and release history; the email address is only an alternative contact route.
