@@ -110,6 +110,12 @@ Use a new empty test directory for every run. This is for testing only; it does 
 - A future SKlauncher version may require a new patch release.
 - Generated AppImages are not committed to this repository.
 
+## Updates and version compatibility
+
+The protected build disables SKlauncher’s automatic updater so that an update cannot silently replace the patched files. You can still update manually: download the newer official AppImage from SKlauncher, keep the current protected copy as a rollback, and run a new SK Protect release against the new official file.
+
+This Final Version 1.0 release targets **SKlauncher 4.0.54**. The patch pipeline is deliberately guarded by version-specific source checks; it stops if the expected launcher code is missing or has changed instead of producing an unverified build. A future SKlauncher release therefore needs a new SK Protect compatibility release. Do not apply this release to a different launcher version and assume the protections or workflow changes carried over.
+
 ## Repository contents
 
 | File | Purpose |
