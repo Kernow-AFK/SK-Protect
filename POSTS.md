@@ -36,6 +36,24 @@ https://github.com/Kernow-AFK/SK-Protect
 
 Project contact: Kernow-AFK@protonmail.com
 
+## Video prompts for Shorts/Reels
+
+### Privacy story — 30 seconds
+
+Show an SKlauncher-style dashboard, then colourful identity and activity cards travelling toward a grey data-broker city. A bright green shield blocks the optional route. On-screen text: “Not an accusation. A user-controlled privacy patch.” Explain that SK Protect targets selected launcher-owned analytics, Discord Rich Presence, updater, and background routes while leaving Microsoft/Mojang, Minecraft, LAN, Realms, and mod servers alone. End on the GitHub URL and “Linux x86_64 — SKlauncher 4.0.54”.
+
+### Multi-Instance Mod Installer — 30 seconds
+
+Show a player browsing a mod in Content Hub. After installation, the page stays open instead of throwing the player back to the library. Show green Selected, red Not selected, dark-red Not available, and yellow Uninstall states. Then show one compatible mod being selected for several instances. End with: “Keep your place. Install to the instances you choose.”
+
+### Preferred Mods Installer — 30 seconds
+
+Show a saved Preferred Mods list with enabled entries, then a new Minecraft instance being created. Animate compatible versions being resolved and applied automatically. Show an incompatible entry marked unavailable rather than installed. End with: “Choose your essential mods once. Apply them to every new instance.”
+
+### Combined explainer — 45 seconds
+
+Use the three supplied SK Protect images as transitions. Introduce Patch 1 Privacy, Patch 2 Multi-Instance Mod Installer, and Patch 3 Preferred Mods Installer. State that the user supplies the official AppImage and the scripts create a separate local copy. Clearly say the project does not accuse SKlauncher developers of data collection and does not redistribute SKlauncher code. End with the GitHub repository and Proton contact address.
+
 ## Discord-sized post
 
 I’ve prepared **SK Protect Final Version 1.0**, an unofficial local patch kit for SKlauncher 4.0.54 on Linux. Point it at the official AppImage you already use and it creates a separate protected copy that can continue using your existing profile. Choose Patch 1 for privacy controls, Patch 2 for the tested install workflow, Patch 3 for Preferred Mods, or the combined build for all three. This is not an accusation against SKlauncher; I found no evidence of developer misuse in the paths inspected. The repo contains scripts and docs only—no launcher binary or account/game data: https://github.com/Kernow-AFK/SK-Protect
