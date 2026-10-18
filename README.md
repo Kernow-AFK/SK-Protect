@@ -57,6 +57,8 @@ chmod +x SKlauncher-4.0.54.AppImage patch.sh
 ./SK-Protect-Final-1.0.AppImage
 ```
 
+<img src="images/sk-protect-conveyor-v1.png" alt="SK Protect artwork showing a launcher and protected data conveyor" width="42%" align="right">
+
 The source AppImage remains unchanged. The normal SKlauncher profile is also left untouched during patching. Keep the original file as your rollback option.
 
 ## Individual patches
@@ -108,14 +110,6 @@ Use a new empty test directory for every run. This is for testing only; it does 
 - A future SKlauncher version may require a new patch release.
 - Generated AppImages are not committed to this repository.
 
-## Artwork
-
-<img src="images/sk-protect-conveyor-v1.png" alt="SK Protect artwork showing a launcher and protected data conveyor" width="42%" align="right">
-
-The overview artwork above is the project’s main banner. The smaller illustration beside this section is an alternative visual for the individual patches. The supplied images are conceptual project artwork and do not claim that SKlauncher collects every category shown.
-
-Additional artwork is retained in [`images/`](images/) for reference.
-
 ## Repository contents
 
 | File | Purpose |
@@ -134,4 +128,6 @@ See [CHANGELOG.md](CHANGELOG.md) for release history and [RELEASE_NOTES.md](RELE
 
 ## Feedback and upstream contact
 
-If you contact the SKlauncher developers, please describe this as an independent local patch and invite their technical review. It is not an official SKlauncher release, and the project does not claim permission to redistribute SKlauncher’s proprietary code.
+<img src="images/sk-protect-hero-v1.png" alt="SK Protect artwork showing the launcher, privacy shield, and data-broker city" width="100%">
+
+If you contact the SKlauncher developers, please be aware that this is an independent project, not something developed by them. We welcome their comments and technical review. We do not claim to have their permission to create this patch, and we have not redistributed their proprietary code or the launcher itself.
