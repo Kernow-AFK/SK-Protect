@@ -9,9 +9,8 @@ const disabledState = '{currentVersion:"disabled",latestVersion:"disabled",minim
 
 let mainSource = fs.readFileSync(mainPath, 'utf8');
 mainSource = mainSource
-  .replaceAll('var O=Ly();O.disableDiscordRpc=!0,O.disableAnalytics=!0,O.analyticsConsentChosen=!0,delete O.clientId,Ct(O),Qs(O.curseforgeApiKey);', 'var O=Ly();O.disableDiscordRpc=!0,O.secureDns=!1,O.disableAnalytics=!0,O.analyticsConsentChosen=!0,delete O.clientId,Ct(O),Qs(O.curseforgeApiKey);')
-  .replaceAll('Object.assign(O,a),O.disableDiscordRpc=!0,O.disableAnalytics=!0,O.analyticsConsentChosen=!0,delete O.clientId,n!==void 0', 'Object.assign(O,a),O.disableDiscordRpc=!0,O.secureDns=!1,O.disableAnalytics=!0,O.analyticsConsentChosen=!0,delete O.clientId,n!==void 0')
-  .replaceAll('secureDns:!0', 'secureDns:!1');
+  .replaceAll('var O=Ly();O.disableDiscordRpc=!0,O.secureDns=!1,O.disableAnalytics=!0,O.analyticsConsentChosen=!0,delete O.clientId,Ct(O),Qs(O.curseforgeApiKey);', 'var O=Ly();O.disableDiscordRpc=!0,O.disableAnalytics=!0,O.analyticsConsentChosen=!0,delete O.clientId,Ct(O),Qs(O.curseforgeApiKey);')
+  .replaceAll('Object.assign(O,a),O.disableDiscordRpc=!0,O.secureDns=!1,O.disableAnalytics=!0,O.analyticsConsentChosen=!0,delete O.clientId,n!==void 0', 'Object.assign(O,a),O.disableDiscordRpc=!0,O.disableAnalytics=!0,O.analyticsConsentChosen=!0,delete O.clientId,n!==void 0');
 const legacyFetchGuard = 'function so(e,t){if(!h.app.isReady())throw new Error("netFetch called before app is ready");const n=new URL(e).hostname.toLowerCase();if(n==="skmedix.pl"||n.endsWith(".skmedix.pl")||n==="xyrios.com"||n.endsWith(".xyrios.com")||n==="google-analytics.com"||n.endsWith(".google-analytics.com")||n==="mclo.gs"||n.endsWith(".mclo.gs"))throw new Error(`Privacy mode blocked background request to ${n}`);return h.net.fetch(e,t)}';
 const strictFetchGuard = 'function privacyAllowsRequest(e,t){try{const n=new URL(e);return t==="GET"&&n.protocol==="https:"&&(n.hostname==="cdn.xyrios.com"&&(n.pathname==="/api/servers.json"||/^\\/api\\/servers\\/[1-9]\\d*\\.png$/i.test(n.pathname)||/^\\/banners\\/[A-Za-z0-9._-]+\\.(?:png|gif|webp|jpe?g)$/i.test(n.pathname))||n.hostname==="xyrios.com"&&/^\\/api\\/servers\\/[1-9]\\d*$/.test(n.pathname)||n.hostname==="beta.skmedix.pl"&&n.pathname==="/news.json")}catch{return!1}}function so(e,t){if(!h.app.isReady())throw new Error("netFetch called before app is ready");const n=new URL(e);if((n.hostname==="skmedix.pl"||n.hostname.endsWith(".skmedix.pl")||n.hostname==="xyrios.com"||n.hostname.endsWith(".xyrios.com")||n.hostname==="google-analytics.com"||n.hostname.endsWith(".google-analytics.com")||n.hostname==="mclo.gs"||n.hostname.endsWith(".mclo.gs"))&&!privacyAllowsRequest(e,t?.method?.toUpperCase()||"GET"))throw new Error(`Privacy mode blocked background request to ${n.hostname}`);return h.net.fetch(e,t)}';
 if (mainSource.includes(legacyFetchGuard)) {
@@ -24,8 +23,8 @@ const legacyDisabledState = disabledState.replace(
 mainSource = mainSource.replaceAll(legacyDisabledState, disabledState);
 const mainReplacements = [
   ['constructor(){this.disabled=tt.is.dev,this.readOnlyInstall=', 'constructor(){this.disabled=!0,this.readOnlyInstall='],
-  ['var O=Ly();Qs(O.curseforgeApiKey);', 'var O=Ly();O.disableDiscordRpc=!0,O.secureDns=!1,O.disableAnalytics=!0,O.analyticsConsentChosen=!0,delete O.clientId,Ct(O),Qs(O.curseforgeApiKey);'],
-  ['Object.assign(O,a),n!==void 0', 'Object.assign(O,a),O.disableDiscordRpc=!0,O.secureDns=!1,O.disableAnalytics=!0,O.analyticsConsentChosen=!0,delete O.clientId,n!==void 0'],
+  ['var O=Ly();Qs(O.curseforgeApiKey);', 'var O=Ly();O.disableDiscordRpc=!0,O.disableAnalytics=!0,O.analyticsConsentChosen=!0,delete O.clientId,Ct(O),Qs(O.curseforgeApiKey);'],
+  ['Object.assign(O,a),n!==void 0', 'Object.assign(O,a),O.disableDiscordRpc=!0,O.disableAnalytics=!0,O.analyticsConsentChosen=!0,delete O.clientId,n!==void 0'],
   ['function so(e,t){if(!h.app.isReady())throw new Error("netFetch called before app is ready");return h.net.fetch(e,t)}', strictFetchGuard],
   ['this.configured&&(this.clientId=xy(),this.defaultParams=', 'this.configured&&O.analyticsConsentChosen&&!O.disableAnalytics&&(this.clientId=xy(),this.defaultParams='],
   ['Disabled (dev mode). Version:', 'Disabled by privacy mode. Version:'],

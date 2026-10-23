@@ -52,6 +52,11 @@ if [[ "$(realpath -m "$OUTPUT")" == "$SOURCE" ]]; then
   printf 'Refusing to overwrite the official source AppImage.\n' >&2
   exit 1
 fi
+if [[ -e "$OUTPUT" ]]; then
+  printf 'Refusing to overwrite an existing output: %s\n' "$OUTPUT" >&2
+  printf 'Move it aside or choose a different output path.\n' >&2
+  exit 1
+fi
 
 cleanup() {
   if [[ "${SK_PROTECT_KEEP_WORK:-0}" != 1 ]]; then

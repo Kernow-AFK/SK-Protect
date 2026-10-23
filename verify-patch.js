@@ -12,6 +12,7 @@ const checks = [
   ['row availability indicator is a static sibling', source.includes('role="checkbox" aria-label="Install on instance"'), 'multi-instance'],
   ['batch toolbar is a static modal control', source.includes('Select All Compatible</button><button type="button"'), 'multi-instance'],
   ['visible key explains install, no-install, unavailable and uninstall states', source.includes('aria-label="Selection key"') && source.includes('✓</span> Selected') && source.includes('×</span> Not selected') && source.includes('N/A</span> Not available') && source.includes('🗑</span> Uninstall'), 'multi-instance'],
+  ['selector states expose text and accessible names rather than colour alone', source.includes('indicator.setAttribute("aria-label",indicator.title)') && source.includes('indicator.setAttribute("aria-checked",String(active))'), 'multi-instance'],
   ['header tells the user how to toggle installation', source.includes('Pick the red × to toggle installation.'), 'multi-instance'],
   ['concise selector instructions are visible', source.includes('Select a red × to install.') && source.includes('Select an installed green ✓ to mark it for removal.'), 'multi-instance'],
   ['batch handler is registered during component setup', source.includes('batchButton.addEventListener("click",async()=>'), 'multi-instance'],
