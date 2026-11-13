@@ -12,6 +12,8 @@
 
 > [!IMPORTANT]
 > SK Protect is an unofficial community project. It is not affiliated with or endorsed by SKlauncher, SKmedix, Mojang, or Microsoft. It does not redistribute SKlauncher. You supply the official AppImage from your own computer, and the patch creates a separate local copy.
+>
+> **Current test scope (2026-11-13):** The maintainer reports that the tested workflows work on PC3 running Linux Mint 22.3. This is a maintainer-reported test on one Linux system; Windows, macOS, other Linux distributions, and other hardware have not been verified. The published patch instructions below still target SKlauncher 4.0.54. The 4.0.57 work remains a beta test candidate, not a published release. The feedback link is intended to open the maintainer's [public GitHub profile](https://github.com/kernow-afk); the revised destination still needs a final click check.
 
 ## What this project is — and is not
 
