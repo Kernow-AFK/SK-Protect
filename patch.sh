@@ -13,14 +13,19 @@ SOURCE_INPUT="$2"
 [[ -x "$SOURCE_INPUT" ]] || { printf 'The AppImage is not executable. Run: chmod +x %q\n' "$SOURCE_INPUT" >&2; exit 1; }
 
 SOURCE="$(realpath "$SOURCE_INPUT")"
+if [[ "${SOURCE##*/}" =~ ^SKlauncher-(4\.0\.[0-9]+) ]]; then
+  LAUNCHER_VERSION="${BASH_REMATCH[1]}"
+else
+  LAUNCHER_VERSION="custom"
+fi
 if [[ $# -eq 3 ]]; then
   OUTPUT="$(realpath -m "$3")"
 else
   case "$MODE" in
-    privacy-only) OUTPUT="$(dirname "$SOURCE")/SK-Protect-4.0.54-Privacy-Only.AppImage" ;;
-    workflow) OUTPUT="$(dirname "$SOURCE")/SK-Protect-4.0.54-Multi-Instance-Mod-Installer.AppImage" ;;
-    preferred-mods) OUTPUT="$(dirname "$SOURCE")/SK-Protect-4.0.54-Preferred-Mods-Installer.AppImage" ;;
-    combined) OUTPUT="$(dirname "$SOURCE")/SK-Protect-4.0.54-Final-1.0.AppImage" ;;
+    privacy-only) OUTPUT="$(dirname "$SOURCE")/SK-Protect-$LAUNCHER_VERSION-Privacy-Only.AppImage" ;;
+    workflow) OUTPUT="$(dirname "$SOURCE")/SK-Protect-$LAUNCHER_VERSION-Multi-Instance-Mod-Installer.AppImage" ;;
+    preferred-mods) OUTPUT="$(dirname "$SOURCE")/SK-Protect-$LAUNCHER_VERSION-Preferred-Mods-Installer.AppImage" ;;
+    combined) OUTPUT="$(dirname "$SOURCE")/SK-Protect-$LAUNCHER_VERSION-Final-1.0.AppImage" ;;
     *) printf 'Unknown patch: %s\n' "$MODE" >&2; exit 2 ;;
   esac
 fi

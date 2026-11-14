@@ -7,7 +7,7 @@ SOURCE_INPUT="${2:-${SKLAUNCHER_SOURCE:-$ROOT/backups/SKlauncher-4.0.54-original
 
 case "$MODE" in
   privacy-only|workflow|preferred-mods|combined|privacy|navigation|multi-instance) ;;
-  *) printf 'Usage: %s [privacy-only|workflow|preferred-mods|combined] /path/to/SKlauncher-4.0.54.AppImage\n' "$0" >&2; exit 2 ;;
+  *) printf 'Usage: %s [privacy-only|workflow|preferred-mods|combined] /path/to/SKlauncher.AppImage\n' "$0" >&2; exit 2 ;;
 esac
 
 for command_name in node mksquashfs mktemp realpath; do
@@ -27,6 +27,11 @@ done
 }
 
 SOURCE="$(realpath "$SOURCE_INPUT")"
+if [[ "${SOURCE##*/}" =~ ^SKlauncher-(4\.0\.[0-9]+) ]]; then
+  LAUNCHER_VERSION="${BASH_REMATCH[1]}"
+else
+  LAUNCHER_VERSION="custom"
+fi
 WORK_ROOT="${SK_PROTECT_WORK_DIR:-$ROOT/work}"
 mkdir -p "$WORK_ROOT"
 BUILD_DIR="$(mktemp -d "$WORK_ROOT/build.XXXXXX")"
@@ -38,18 +43,23 @@ PATCHED_SQUASHFS="$BUILD_DIR/patched.squashfs"
 SOURCE_ASAR="$SQUASHFS/resources/app.asar"
 
 case "$MODE" in
-  privacy-only) DEFAULT_OUTPUT="$ROOT/SK-Protect-4.0.54-Privacy-Only.AppImage" ;;
-  preferred-mods) DEFAULT_OUTPUT="$ROOT/SK-Protect-4.0.54-Preferred-Mods.AppImage" ;;
-  workflow) DEFAULT_OUTPUT="$ROOT/SK-Protect-4.0.54-Workflow.AppImage" ;;
-  privacy) DEFAULT_OUTPUT="$ROOT/SK-Protect-4.0.54.AppImage" ;;
-  combined) DEFAULT_OUTPUT="$ROOT/SKlauncher-4.0.54-Workflow-Fixes.AppImage" ;;
-  navigation) DEFAULT_OUTPUT="$ROOT/SKlauncher-4.0.54-Navigation-Fix.AppImage" ;;
-  multi-instance) DEFAULT_OUTPUT="$ROOT/SKlauncher-4.0.54-Multi-Instance-Fix.AppImage" ;;
+  privacy-only) DEFAULT_OUTPUT="$ROOT/SK-Protect-$LAUNCHER_VERSION-Privacy-Only.AppImage" ;;
+  preferred-mods) DEFAULT_OUTPUT="$ROOT/SK-Protect-$LAUNCHER_VERSION-Preferred-Mods.AppImage" ;;
+  workflow) DEFAULT_OUTPUT="$ROOT/SK-Protect-$LAUNCHER_VERSION-Workflow.AppImage" ;;
+  privacy) DEFAULT_OUTPUT="$ROOT/SK-Protect-$LAUNCHER_VERSION.AppImage" ;;
+  combined) DEFAULT_OUTPUT="$ROOT/SKlauncher-$LAUNCHER_VERSION-Workflow-Fixes.AppImage" ;;
+  navigation) DEFAULT_OUTPUT="$ROOT/SKlauncher-$LAUNCHER_VERSION-Navigation-Fix.AppImage" ;;
+  multi-instance) DEFAULT_OUTPUT="$ROOT/SKlauncher-$LAUNCHER_VERSION-Multi-Instance-Fix.AppImage" ;;
 esac
 OUTPUT="${SK_PROTECT_OUTPUT:-$DEFAULT_OUTPUT}"
 
 if [[ "$(realpath -m "$OUTPUT")" == "$SOURCE" ]]; then
   printf 'Refusing to overwrite the official source AppImage.\n' >&2
+  exit 1
+fi
+if [[ -e "$OUTPUT" ]]; then
+  printf 'Refusing to overwrite an existing output: %s\n' "$OUTPUT" >&2
+  printf 'Move it aside or choose a different output path.\n' >&2
   exit 1
 fi
 
@@ -68,14 +78,37 @@ printf 'Extracting official AppImage into an isolated build directory...\n'
   "$SOURCE" --appimage-extract >extract.log
 )
 [[ -f "$SOURCE_ASAR" ]] || {
-  printf 'Expected resources/app.asar was not found. This may not be the matching SKlauncher 4.0.54 AppImage.\n' >&2
+  printf 'Expected resources/app.asar was not found in the supplied SKlauncher AppImage.\n' >&2
   exit 1
 }
+
+RENDERER_ASAR_PATH="$(node - "$SOURCE_ASAR" <<'NODE'
+const fs = require('node:fs');
+const archive = fs.readFileSync(process.argv[2]);
+const headerLength = archive.readUInt32LE(12);
+const header = JSON.parse(archive.toString('utf8', 16, 16 + headerLength));
+function visit(files, prefix = '') {
+  for (const [name, entry] of Object.entries(files)) {
+    const relative = prefix ? `${prefix}/${name}` : name;
+    if (entry.files) visit(entry.files, relative);
+    else if (/^out\/renderer\/assets\/index-[^/]+\.js$/.test(relative)) {
+      process.stdout.write(relative);
+      process.exit(0);
+    }
+  }
+}
+visit(header.files);
+process.exit(1);
+NODE
+)"
+[[ -n "$RENDERER_ASAR_PATH" ]] || { printf 'Could not identify the renderer bundle.\n' >&2; exit 1; }
 
 node "$ROOT/asar-tools.js" "$SOURCE_ASAR" extract "$EXTRACTED" \
   out/main/index.js \
   out/preload/index.js \
-  out/renderer/assets/index-cw0H0b6L.js
+  "$RENDERER_ASAR_PATH"
+
+RENDERER_INPUT="$EXTRACTED/$RENDERER_ASAR_PATH"
 
 DO_PRIVACY=0
 DO_WORKFLOW=0
@@ -116,21 +149,29 @@ if [[ "$DO_WORKFLOW" == 1 ]]; then
   WORKFLOW_MODE="$MODE"
   [[ "$MODE" == privacy || "$MODE" == workflow ]] && WORKFLOW_MODE=combined
   node "$ROOT/apply-fix.js" \
-    "$EXTRACTED/out/renderer/assets/index-cw0H0b6L.js" \
+    "$RENDERER_INPUT" \
     "$PATCHED_RENDERER" \
     "$WORKFLOW_MODE"
 else
-  cp -p "$EXTRACTED/out/renderer/assets/index-cw0H0b6L.js" "$PATCHED_RENDERER"
+  cp -p "$RENDERER_INPUT" "$PATCHED_RENDERER"
 fi
 if [[ "$DO_PREFERRED" == 1 ]]; then
   node "$ROOT/preferred-mods-ui-patch.js" "$PATCHED_RENDERER"
+  node "$ROOT/settings-enhancements-patch.js" "$PATCHED_RENDERER"
 fi
-node --check "$PATCHED_RENDERER"
+# The renderer is an ES module, while the temporary build directory has no
+# package.json declaring module type. Give Node the correct extension for the
+# syntax-only check instead of treating the bundle as CommonJS.
+PATCHED_RENDERER_CHECK="$PATCHED_RENDERER.mjs"
+cp -p "$PATCHED_RENDERER" "$PATCHED_RENDERER_CHECK"
+node --check "$PATCHED_RENDERER_CHECK"
+rm -f "$PATCHED_RENDERER_CHECK"
 if [[ "$DO_WORKFLOW" == 1 ]]; then
   node "$ROOT/verify-patch.js" "$PATCHED_RENDERER" "$WORKFLOW_MODE"
 fi
 if [[ "$DO_PREFERRED" == 1 ]]; then
   node "$ROOT/verify-preferred-mods-ui.js" "$PATCHED_RENDERER"
+  node "$ROOT/verify-settings-enhancements.js" "$PATCHED_RENDERER"
 fi
 
 if [[ "$DO_PRIVACY" == 1 || "$DO_PREFERRED" == 1 ]]; then
@@ -139,12 +180,16 @@ if [[ "$DO_PRIVACY" == 1 || "$DO_PREFERRED" == 1 ]]; then
     "$PATCHED_RENDERER" \
     "$PATCHED_ASAR" \
     "$EXTRACTED/out/main/index.js" \
-    "$EXTRACTED/out/preload/index.js"
+    "$EXTRACTED/out/preload/index.js" \
+    "$RENDERER_ASAR_PATH"
 else
   node "$ROOT/pack-asar.js" \
     "$SOURCE_ASAR" \
     "$PATCHED_RENDERER" \
-    "$PATCHED_ASAR"
+    "$PATCHED_ASAR" \
+    "" \
+    "" \
+    "$RENDERER_ASAR_PATH"
 fi
 cp -p "$PATCHED_ASAR" "$SOURCE_ASAR"
 

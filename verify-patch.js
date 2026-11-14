@@ -5,6 +5,31 @@ const mode = process.argv[3] || 'combined';
 if (!bundlePath) throw new Error('Usage: node verify-patch.js <patched-renderer.js>');
 if (!['combined', 'navigation', 'multi-instance'].includes(mode)) throw new Error(`Unknown verification mode: ${mode}`);
 const source = fs.readFileSync(bundlePath, 'utf8');
+if (source.includes('function applySelectedContent(project,versions,entries,downloadsStore)')) {
+  const modernChecks = [
+    ['batch selection state is reset between picker sessions', 'selected=new pa;uninstalling=new pa;'],
+    ['picker can toggle independent instance selections', 'toggleSelection(e,remove)'],
+    ['select all targets compatible, uninstalled instances', 'row.compat.compatible&&!row.alreadyInstalled'],
+    ['batch action returns a reviewed set to both install flows', 'Aa.confirm([...Aa.selected].map(id=>({id,remove:Aa.uninstalling.has(id)})))'],
+    ['incompatible instances remain unavailable', 're.disabled=!P().compatible&&!ne()'],
+    ['installed mods can be selected for removal', 'Installed; select to mark for removal'],
+    ['picker instructions match row selection and installed-mod removal behavior', 'Select an uninstalled compatible instance to mark it for installation. Select an installed instance to mark it for removal.'],
+    ['picker includes bottom GitHub and email feedback links', 'data-skp-picker-feedback href="mailto:Kernow-AFK@protonmail.com"'],
+    ['removal uses the launcher content removal API', 'window.api.content.mods.remove(instance.id,project.id,project.source)'],
+    ['install uses the launcher’s existing per-instance installation API', 'window.api.installation.start({downloadUrl:file.url'],
+    ['release selection is checked against each instance', 'JE(versions,project.type||"mod",instance)'],
+    ['single-instance install path remains present', 'window.api.installation.start({downloadUrl:T.url'],
+    ['batch outcomes are reported', 'Some instance changes failed:'],
+  ];
+  let failed = false;
+  for (const [label, needle] of modernChecks) {
+    const passed = source.includes(needle);
+    console.log(`${passed ? 'PASS' : 'FAIL'} ${label}`);
+    failed ||= !passed;
+  }
+  if (failed) process.exitCode = 1;
+  process.exit();
+}
 const checks = [
   ['automatic install navigation removed', source.includes(',O.success&&I&&ma("library")') === false && source.includes('&&re&&ma("library")') === false, 'navigation'],
   ['manual Library actions retained', source.includes('ma("library")'), 'navigation'],
@@ -12,9 +37,11 @@ const checks = [
   ['row availability indicator is a static sibling', source.includes('role="checkbox" aria-label="Install on instance"'), 'multi-instance'],
   ['batch toolbar is a static modal control', source.includes('Select All Compatible</button><button type="button"'), 'multi-instance'],
   ['visible key explains install, no-install, unavailable and uninstall states', source.includes('aria-label="Selection key"') && source.includes('✓</span> Selected') && source.includes('×</span> Not selected') && source.includes('N/A</span> Not available') && source.includes('🗑</span> Uninstall'), 'multi-instance'],
+  ['selector states expose text and accessible names rather than colour alone', source.includes('indicator.setAttribute("aria-label",indicator.title)') && source.includes('indicator.setAttribute("aria-checked",String(active))'), 'multi-instance'],
   ['header tells the user how to toggle installation', source.includes('Pick the red × to toggle installation.'), 'multi-instance'],
   ['concise selector instructions are visible', source.includes('Select a red × to install.') && source.includes('Select an installed green ✓ to mark it for removal.'), 'multi-instance'],
   ['batch handler is registered during component setup', source.includes('batchButton.addEventListener("click",async()=>'), 'multi-instance'],
+  ['uninstall selections are excluded from the subsequent install callback', source.includes('const installs=[...Aa.selected].filter(id=>!Aa.uninstalling.has(id));Aa.confirm(installs)'), 'multi-instance'],
   ['select-all chooses compatible uninstalled instances only', source.includes('filter(row=>row.compat.compatible&&!row.alreadyInstalled)'), 'multi-instance'],
   ['indicator selection updates batch state', source.includes('indicator.addEventListener("click",event=>{event.stopPropagation()'), 'multi-instance'],
   ['large indicator is positioned inside the padded instance row', source.includes('<li class="relative"><button type="button">') && source.includes('absolute right-3 top-1/2 z-10 flex h-14 w-14') && source.includes('X.style.paddingRight="5rem"'), 'multi-instance'],
