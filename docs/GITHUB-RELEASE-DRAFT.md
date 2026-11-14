@@ -15,7 +15,7 @@ SK Protect v1.1.0-beta.1 updates the independent SK Protect patch kit for the **
 
 ### Testing and known limits
 
-The maintainer accepted the appearance and spacing of the current 4.0.57 candidate. Repository and bundled build-time verifiers passed on PC3. The reported interactive test environment is Linux Mint 22.3; other operating systems are unverified. Clean-profile startup, accessibility review, provider edge cases, baseline-versus-patched network capture, and clean-environment installer/rollback checks remain open. Stable SKlauncher 3.2.18 has not been ported. See [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) and [the test record](docs/TEST-RESULTS-2026-11-12-4.0.57-beta.md).
+The maintainer has now interactively checked all newly added features on the current 4.0.57 candidate on PC3 running Linux Mint 22.3 and reports they work as intended. Repository and bundled build-time verifiers passed on PC3. The reported interactive test environment is Linux Mint 22.3; other operating systems are unverified. Clean-profile startup, accessibility review, provider edge cases, baseline-versus-patched network capture, and clean-environment installer/rollback checks remain open. Stable SKlauncher 3.2.18 has not been ported. See [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) and [the test record](docs/TEST-RESULTS-2026-11-12-4.0.57-beta.md).
 
 ### Installation
 
