@@ -13,7 +13,7 @@
 > [!IMPORTANT]
 > SK Protect is an unofficial community project. It is not affiliated with or endorsed by SKlauncher, SKmedix, Mojang, or Microsoft. It does not redistribute SKlauncher. You supply the official AppImage from your own computer, and the patch creates a separate local copy.
 >
-> **Current test scope (2026-11-13):** The maintainer reports that the tested workflows work on PC3 running Linux Mint 22.3. This is a maintainer-reported test on one Linux system; Windows, macOS, other Linux distributions, and other hardware have not been verified. The published patch instructions below still target SKlauncher 4.0.54. The 4.0.57 work remains a beta test candidate, not a published release. The feedback link is intended to open the maintainer's [public GitHub profile](https://github.com/kernow-afk); the revised destination still needs a final click check. The project website is [sk-protect.whitechub18.chatgpt.site](https://sk-protect.whitechub18.chatgpt.site).
+> SK Protect has been tested on Linux Mint 22.3. We welcome feedback from users about other operating systems.
 
 ## What this project is — and is not
 
@@ -31,7 +31,7 @@ The patch is not a firewall, anonymity tool, antivirus, or replacement for Micro
 |---|---|---|
 | **Patch 1 — Privacy** | Disables launcher analytics, Discord Rich Presence, automatic updating, and selected launcher-owned background routes while retaining explicitly allowed news and public-server routes. | You want the privacy-focused launcher controls only. |
 | **Patch 2 — Multi-Instance Mod Installer** | Keeps Content Hub open after installs and adds the tested multi-instance install selector with green/red/unavailable/uninstall states. | You want installation quality-of-life improvements without the privacy changes. |
-| **Patch 3 — Preferred Mods Installer** | Saves a personal mod list, resolves compatible releases per instance, and optionally applies enabled mods after every new instance is created. | You want automatic essential/preferred mods. |
+| **Patch 3 — SK Preferred Mods** | Saves a personal mod list, resolves compatible releases per instance, and optionally applies enabled mods after every new instance is created. | You want automatic essential/preferred mods. |
 | **Final Version 1.0 — Combined** | Applies Patch 1 + Patch 2 + Patch 3 in one guarded build. | You want the complete SK Protect experience. |
 
 The repository contains transformation scripts and verification code only. It does **not** contain the SKlauncher AppImage, ASAR, extracted launcher bundle, accounts, worlds, instances, or game data.
@@ -83,7 +83,7 @@ It does not block Microsoft/Mojang services, the Java game, LAN, Realms, or a mo
 
 Patch 2 keeps the Content Hub in place after a successful background installation. You are no longer sent back to the instance library as soon as a mod finishes installing, so you keep your place and can continue reading. It also allows a compatible mod to be selected for multiple existing instances; explains green **Selected**, red **Not selected**, dark-red **Not available**, and yellow **Uninstall** states; supports reversible uninstall marking and confirmation through SKlauncher’s normal manifest-aware removal route; and preserves the original single-instance installation path.
 
-### Patch 3 — Preferred Mods Installer
+### Patch 3 — SK Preferred Mods
 
 ```bash
 ./patch.sh preferred-mods ./SKlauncher-4.0.54.AppImage ./SK-Protect-Preferred-Mods-Installer.AppImage
