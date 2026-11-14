@@ -2,7 +2,7 @@
 
 <h1 align="center">SK Protect</h1>
 
-<p align="center"><strong>Independent, unofficial patches for SKlauncher 4.0 on Linux x86_64</strong></p>
+<p align="center"><strong>Independent, unofficial patches for SKlauncher 4.0.57 beta on Linux x86_64</strong></p>
 <p align="center">Choose privacy controls, smoother mod browsing, reusable Preferred Mods—or all three.</p>
 
 > [!IMPORTANT]
@@ -10,6 +10,8 @@
 
 > [!WARNING]
 > This beta release targets SKlauncher 4.0.57 for Linux x86_64. The publisher labels the SKlauncher 4.0 line beta; stable 3.2.18 has not been ported, so this project has no stable-compatible release. The maintainer reports testing on PC3 running Linux Mint 22.3; other operating systems have not been verified. Open items for clean-profile, accessibility, provider, network, and rollback testing remain listed in [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md). Do not describe this as a stable or cross-platform release.
+
+> **New in v1.1.0-beta.1:** Custom text colors are now available in **Settings → Appearance**. Choose local primary and secondary text colors to make launcher text easier to read. [Get the matching SK Protect source release](https://github.com/Kernow-AFK/SK-Protect/releases/tag/v1.1.0-beta.1); this beta is specifically for **SKlauncher 4.0.57 Linux x86_64** and does not include a patched AppImage.
 
 ## Contents
 
@@ -22,6 +24,15 @@
 - [Updates](#updates-without-automatic-replacement)
 - [Testing, limitations, and rollback](#testing-limitations-and-rollback)
 - [Contributing and project status](#contributing-and-project-status)
+
+
+## Match SK Protect to your SKlauncher version
+
+| Installed SKlauncher | Matching SK Protect release | Notes |
+|---|---|---|
+| 4.0.57 beta, Linux x86_64 | [v1.1.0-beta.1](https://github.com/Kernow-AFK/SK-Protect/releases/tag/v1.1.0-beta.1) | Current beta source release; build locally with your official 4.0.57 AppImage. |
+| 4.0.54, Linux x86_64 | [v1.0.0](https://github.com/Kernow-AFK/SK-Protect/releases/tag/v1.0.0) | Historical patch release for that exact launcher version. |
+| 3.2.18 stable or any other version | No matching release | Do not apply a different version's patch; wait for a matching compatibility release. |
 
 ## What changes for players
 
@@ -55,9 +66,9 @@ Maintain one reusable list of favourite or essential mods—Sodium, FerriteCore,
 
 When **Install Preferred Mods on every new instance** is checked, enabled mods with compatible releases install automatically after a new instance is created. It is off by default. The implementation resolves project and release information afresh for that instance and reuses the launcher's compatibility and installation routes; it stores project identity and preferences, not chosen JAR URLs or account tokens.
 
-On an individual instance page, **Add Preferred Mods** opens a review window for that instance without leaving its page. Compatible, missing mods begin selected; click one to exclude it for this instance. Existing mods are skipped, and releases unavailable for that Minecraft version or loader are shown as unavailable. **Apply** installs the remaining selections on that instance; **Cancel** closes the review without applying changes. This new dialog is awaiting interactive confirmation on the current beta candidate.
+On an individual instance page, **Add Preferred Mods** opens a review window for that instance without leaving its page. Compatible, missing mods begin selected; click one to exclude it for this instance. Existing mods are skipped, and releases unavailable for that Minecraft version or loader are shown as unavailable. **Apply** installs the remaining selections on that instance; **Cancel** closes the review without applying changes. The maintainer has now interactively checked the newly added flows on PC3 running Linux Mint 22.3 and reports they work as intended. Broader clean-profile, accessibility, network-comparison, provider-edge-case, and rollback checks remain open.
 
-Read the [SK Protect guide on GitHub](https://github.com/Kernow-AFK/SK-Protect#readme) or visit the [SK Protect website](https://sk-protect.whitechub18.chatgpt.site).
+Read the [SK Protect guide on GitHub](https://github.com/Kernow-AFK/SK-Protect#readme) or visit the [SK Protect website](https://sk-protect.kernowspace.chatgpt.site).
 
 ### Custom text colors
 
@@ -92,7 +103,7 @@ Requirements: Linux x86_64, Node.js 18+, `mksquashfs` (usually `squashfs-tools`)
 
 1. Download the official 4.0 AppImage yourself from the [official SKlauncher publisher page](https://next.skmedix.pl/downloads). SK Protect deliberately does not automate this download: it must not host, mirror, scrape, bypass publisher controls, or guess an unverified binary URL. The publisher currently labels 4.0 as beta.
 2. Keep it as your untouched rollback copy.
-3. Download this repository using **Code → Download ZIP** and extract it, or clone it with Git.
+3. Download the source archive from the matching [v1.1.0-beta.1 GitHub release](https://github.com/Kernow-AFK/SK-Protect/releases/tag/v1.1.0-beta.1) and extract it, or clone the repository at that tag. The release source archive is not a prebuilt AppImage.
 4. Open a terminal in the extracted folder and run:
 
 ```bash
