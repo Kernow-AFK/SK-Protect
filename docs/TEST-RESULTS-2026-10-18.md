@@ -1,5 +1,21 @@
 # Test results — 2026-10-18
 
+> Historical result for the 4.0.54 AppImage only. It does not describe the 4.0.57 beta candidates or support for stable SKlauncher 3.2.18.
+
+## Local maintainer-source rebuild
+
+The official source AppImage was located in the maintainer's SFTP project
+folder and copied into the repository's ignored `backups/` directory. Its
+SHA-256 was verified both remotely and locally:
+
+`6f7ae5220f6f1ecfe310ce37d20b67a9357209b12655ccf2772ef1243a1b8c48`
+
+Using that untouched source, the local machine rebuilt `privacy-only`,
+`workflow`, `preferred-mods`, and `combined`. Every bundled static and
+behavioral verifier passed, and the source hash was unchanged after all four
+builds. The generated AppImages remain in ignored local storage and are not
+release artifacts.
+
 Branch: `release/public-readiness`
 
 ## Source

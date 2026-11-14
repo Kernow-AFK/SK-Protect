@@ -4,11 +4,15 @@
 
 Run `./test.sh`. It checks JavaScript and shell syntax, repository hygiene, privacy allowlist behavior, safe installer refusal paths, documentation links, and the Preferred Mods store fixture where possible.
 
+## Stable-channel status
+
+The publisher identifies 3.2.18 as the stable channel and 4.0 as beta. This patch set edits the 4.0 Electron/AppImage renderer and main-process bundle; it is not compatible with the 3.2 Java `.jar`. Do not describe a 4.0 candidate as a stable-channel release. A separate stable 3.2 port would need its own codebase analysis and implementation.
+
 ## Full build matrix (official AppImage required)
 
-Build `privacy-only`, `workflow`, `preferred-mods`, and `combined` from the same untouched official 4.0.54 Linux x86_64 AppImage. Record source hash locally, output hashes, patch output, and verification output. Confirm that the source hash does not change and every output path is new.
+For the 4.0.57 beta compatibility matrix, build `privacy-only`, `workflow`, `preferred-mods`, and `combined` from the same untouched official 4.0.57 Linux x86_64 AppImage. Record source hash locally, output hashes, patch output, and verification output. Confirm that the source hash does not change and every output path is new. Do not use this matrix to claim stable-channel support.
 
-The latest recorded automated matrix is [TEST-RESULTS-2026-10-18.md](TEST-RESULTS-2026-10-18.md).
+The 4.0.54 historical automated matrix is [TEST-RESULTS-2026-10-18.md](TEST-RESULTS-2026-10-18.md). The 4.0.57 beta candidate evidence is recorded in [TEST-RESULTS-2026-11-12-4.0.57-beta.md](TEST-RESULTS-2026-11-12-4.0.57-beta.md); those candidates have not passed the manual matrix below.
 
 ## Manual clean-profile matrix
 

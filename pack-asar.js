@@ -2,7 +2,7 @@ const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const [archivePath, replacementPath, outputPath, mainReplacementPath, preloadReplacementPath] = process.argv.slice(2);
+const [archivePath, replacementPath, outputPath, mainReplacementPath, preloadReplacementPath, rendererTargetPath] = process.argv.slice(2);
 if (!archivePath || !replacementPath || !outputPath) {
   throw new Error('Usage: node pack-asar.js <source.asar> <renderer.js> <output.asar> [main.js] [preload.js]');
 }
@@ -11,7 +11,7 @@ const source = fs.readFileSync(archivePath);
 const headerLength = source.readUInt32LE(12);
 const header = JSON.parse(source.toString('utf8', 16, 16 + headerLength));
 const sourceDataOffset = 8 + source.readUInt32LE(4);
-const targetPath = 'out/renderer/assets/index-cw0H0b6L.js';
+const targetPath = rendererTargetPath || 'out/renderer/assets/index-cw0H0b6L.js';
 const replacements = new Map([[targetPath, replacementPath]]);
 if (mainReplacementPath) replacements.set('out/main/index.js', mainReplacementPath);
 if (preloadReplacementPath) replacements.set('out/preload/index.js', preloadReplacementPath);

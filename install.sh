@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 
 if [[ $# -lt 1 || $# -gt 2 ]]; then
-  printf 'Usage: %s /path/to/official-SKlauncher-4.0.54.AppImage [/path/to/output.AppImage]\n' "$0" >&2
+  printf 'Usage: %s /path/to/official-SKlauncher-4.0.57.AppImage [/path/to/output.AppImage]\n' "$0" >&2
   exit 2
 fi
 

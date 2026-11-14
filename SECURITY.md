@@ -2,7 +2,7 @@
 
 ## Supported version
 
-Only the current SK Protect release for official SKlauncher 4.0.54 Linux x86_64 is supported. A newer upstream launcher is unsupported until the patch guards, behavior, and threat model are revalidated.
+There is currently no stable SK Protect release. SK Protect v1.1.0-beta.1 targets the official SKlauncher 4.0.57 Linux x86_64 AppImage beta line. The maintainer reports testing on Linux Mint 22.3; other operating systems are unverified. Stable SKlauncher 3.2.18 has not been ported. See `RELEASE_CHECKLIST.md` for outstanding verification.
 
 ## Reporting a vulnerability
 
