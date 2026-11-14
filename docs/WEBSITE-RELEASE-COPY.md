@@ -1,5 +1,15 @@
 # Website copy — SK Protect v1.1.0-beta.1
 
+## Top-left new-release sticker
+
+**NEW — SK Protect v1.1.0-beta.1 for SKlauncher 4.0.57 beta**
+
+Custom text colors are now available in Settings → Appearance. Choose your own primary and secondary launcher text colors. [Full release details on GitHub](https://github.com/Kernow-AFK/SK-Protect/releases/tag/v1.1.0-beta.1).
+
+## Upgrade banner
+
+**Update SKlauncher first, then apply the matching SK Protect patch.** Download the official SKlauncher 4.0.57 beta AppImage from the publisher, keep the original unchanged for rollback, and build a separate patched copy from the v1.1.0-beta.1 source release. Always match SK Protect to the exact SKlauncher version; this beta does not support stable 3.2.18.
+
 ## Release headline
 
 ### SK Protect now supports SKlauncher 4.0.57 beta
@@ -20,7 +30,7 @@ Settings → About also shows the SK Protect release information and links to th
 
 ## Testing and compatibility
 
-This is a beta for SKlauncher 4.0.57 on Linux x86_64. The maintainer's reported test machine is PC3 running Linux Mint 22.3; other operating systems have not been verified. The stable SKlauncher 3.2.18 line has not been ported. Accessibility, clean-profile, provider edge-case, network-comparison, and clean-environment rollback checks remain open. Please treat this as public testing, not a stable release.
+This is a beta for SKlauncher 4.0.57 on Linux x86_64. The maintainer has interactively checked all newly added features on PC3 running Linux Mint 22.3 and reports they work as intended; other operating systems have not been verified. The stable SKlauncher 3.2.18 line has not been ported. Accessibility, clean-profile, provider edge-case, network-comparison, and clean-environment rollback checks remain open. Please treat this as public testing, not a stable release.
 
 ## Get the source
 
