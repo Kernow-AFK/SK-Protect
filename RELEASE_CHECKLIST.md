@@ -167,3 +167,11 @@ The connected GitHub token could create labels but returned HTTP 403 for reposit
 - [x] Pass the full combined verification suite and build from the unchanged official source.
 - [x] Install the corrected candidate on PC3 Desktop: `SK-Protect-4.0.57-BETA-Combined-about-appearance-colors-v3-layout-candidate.AppImage`, SHA-256 `e2c6ac1f3675945140ae405f7d44f3c3f180d11b7864fc34d68158da77e3f2bb`; Desktop and build hashes match.
 - [ ] Maintainer confirms the separate row visually in Appearance settings.
+
+
+## Current candidate interactive acceptance — 2026-11-14
+
+- [x] The maintainer reports testing all newly added features on the current SKlauncher 4.0.57 candidate on PC3/Linux Mint 22.3; they are working as intended. This supersedes earlier candidate-specific UI confirmation gates for the current candidate. Earlier binaries were not individually retested.
+- [x] The checked UI flows include Preferred Mods page lifecycle/navigation, Add Mods routing and normal Content Hub install behavior, instance-specific Preferred Mods review and installed-mod skipping, feedback links, About links, custom text color controls, and the requested Preferred Mods layout/branding.
+- [ ] Clean-profile full matrix, accessibility, provider edge cases, baseline-versus-patched network comparison, clean-environment installer/rollback, and automatic-skip reporting remain open. This remains a beta release; do not call it stable.
+- [ ] At a later session, review any SKlauncher beta/development builds the publisher has released with the maintainer before starting another compatibility port.
