@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a reproducible build, patch, launcher, or workflow problem.
+title: "Bug: "
+labels: [bug, needs-triage]
+body:
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Patch mode
+      options: [privacy-only, workflow, preferred-mods, combined]
+    validations: {required: true}
+  - type: input
+    id: version
+    attributes:
+      label: SK Protect release or commit
+    validations: {required: true}
+  - type: input
+    id: system
+    attributes:
+      label: Linux distribution and desktop session
+    validations: {required: true}
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Use a clean profile where possible. Do not include tokens, account data, private paths, server addresses, or proprietary launcher files.
+    validations: {required: true}
+  - type: textarea
+    id: expected
+    attributes: {label: Expected result}
+    validations: {required: true}
+  - type: textarea
+    id: actual
+    attributes: {label: Actual result and redacted evidence}
+    validations: {required: true}
+  - type: checkboxes
+    id: source
+    attributes:
+      label: Source confirmation
+      options:
+        - label: I used the official SKlauncher 4.0.54 Linux x86_64 AppImage downloaded from the publisher.
+          required: true
+        - label: I removed private information and did not attach SKlauncher binaries or extracted code.
+          required: true

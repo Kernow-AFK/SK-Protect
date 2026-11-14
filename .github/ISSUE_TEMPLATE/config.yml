@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private security report
+    url: mailto:Kernow-AFK@protonmail.com
+    about: Follow SECURITY.md for vulnerabilities that should not be public.
+  - name: Official SKlauncher support
+    url: https://skmedix.pl/
+    about: SK Protect is independent; use upstream support for unmodified-launcher issues.

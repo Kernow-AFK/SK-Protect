@@ -9,7 +9,9 @@ if (!mainPath) throw new Error('Usage: node test-preferred-mods-store.js <patche
 const source = fs.readFileSync(mainPath, 'utf8');
 const start = source.indexOf('function registerPreferredMods(){');
 const endMarker = ';var Fm=[it,ro]';
-const end = source.indexOf(endMarker, start);
+const legacyEnd = source.indexOf(endMarker, start);
+const modernEnd = source.indexOf('};h.app.whenReady().then(async()=>{', start);
+const end = modernEnd >= 0 ? modernEnd : legacyEnd;
 if (start < 0 || end < 0) throw new Error('Preferred Mods registration function not found');
 
 const handlers = new Map();
@@ -18,6 +20,7 @@ try {
   const context = {
     p: fs,
     l: path,
+    d: path,
     console,
     h: {
       app: { getPath: key => key === 'userData' ? profile : (() => { throw new Error(`Unexpected app path: ${key}`); })() },

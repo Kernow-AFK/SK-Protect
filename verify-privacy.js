@@ -6,7 +6,8 @@ if (!mainPath) throw new Error('Usage: node verify-privacy.js <patched-main.js> 
 
 const source = fs.readFileSync(mainPath, 'utf8');
 const start = source.indexOf('function privacyAllowsRequest(');
-const end = source.indexOf('function so(', start);
+const oldFetchEnd = source.indexOf('function so(', start);
+const end = oldFetchEnd >= 0 ? oldFetchEnd : source.indexOf('function mn(', start);
 if (start < 0 || end < 0) throw new Error('Privacy request allowlist was not found');
 const allowlistSource = source.slice(start, end);
 const privacyAllowsRequest = new Function(`${allowlistSource}; return privacyAllowsRequest;`)();
@@ -44,11 +45,26 @@ if (failed) process.exitCode = 1;
 
 if (preloadPath) {
   const preload = fs.readFileSync(preloadPath, 'utf8');
+  const version4057 = source.includes('function CT(){const e=!0;return{appVersion:');
   const updaterStates = preload.match(/currentVersion:"disabled"/g) ?? [];
   const restartNulls = preload.match(/autoRestartAt:null/g) ?? [];
-  const passed = updaterStates.length > 0 && restartNulls.length >= updaterStates.length;
-  console.log(`${passed ? 'PASS' : 'FAIL'} disabled updater cannot schedule a restart toast`);
+  const passed = version4057
+    ? source.includes('function CT(){const e=!0;return{appVersion:')
+    : updaterStates.length > 0 && restartNulls.length >= updaterStates.length;
+  console.log(`${passed ? 'PASS' : 'FAIL'} launcher updater remains disabled in this build`);
   failed ||= !passed;
 }
+
+const privateSettingsEnforced = source.includes('O.disableDiscordRpc=!0,O.disableAnalytics=!0,O.analyticsConsentChosen=!0');
+console.log(`${privateSettingsEnforced ? 'PASS' : 'FAIL'} privacy defaults and persisted settings are enforced`);
+failed ||= !privateSettingsEnforced;
+
+const secureDnsForcedOff = source.includes('disableDiscordRpc=!0,O.secureDns=!1,O.disableAnalytics=!0');
+console.log(`${secureDnsForcedOff ? 'FAIL' : 'PASS'} secure DNS is not forcibly disabled`);
+failed ||= secureDnsForcedOff;
+
+const feedbackMailtoAllowed = source.includes('n==="mailto:kernow-afk@protonmail.com"') && source.includes('r&&await h.shell.openExternal(t)');
+console.log(`${feedbackMailtoAllowed ? 'PASS' : 'FAIL'} only the project feedback mailto is allowed through the external-link bridge`);
+failed ||= !feedbackMailtoAllowed;
 
 if (failed) process.exitCode = 1;

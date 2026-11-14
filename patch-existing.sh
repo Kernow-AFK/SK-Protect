@@ -19,10 +19,15 @@ SOURCE_INPUT="$1"
 }
 
 SOURCE="$(realpath "$SOURCE_INPUT")"
+if [[ "${SOURCE##*/}" =~ ^SKlauncher-(4\.0\.[0-9]+) ]]; then
+  LAUNCHER_VERSION="${BASH_REMATCH[1]}"
+else
+  LAUNCHER_VERSION="custom"
+fi
 if [[ $# -eq 2 ]]; then
   OUTPUT="$(realpath -m "$2")"
 else
-  OUTPUT="$(dirname "$SOURCE")/SK-Protect-4.0.54.AppImage"
+  OUTPUT="$(dirname "$SOURCE")/SK-Protect-$LAUNCHER_VERSION.AppImage"
 fi
 
 if [[ "$OUTPUT" == "$SOURCE" ]]; then
