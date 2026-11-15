@@ -1,44 +1,21 @@
 # Contributing to SK Protect
 
-SK Protect is the maintainer's first public open-source software project. Constructive criticism is welcome, including criticism of the architecture, threat model, patch guards, installer safety, usability, accessibility, tests, documentation, and rollback process.
+Contributions are welcome. Before making a large change, open an issue to discuss the intended behavior and compatibility impact.
 
-## Before opening an issue
+## Good first contributions
 
-1. Confirm the exact official SKlauncher 4.0 Linux x86_64 AppImage version and whether it is beta. The 4.0 line is currently beta; stable 3.2.18 is not supported by this patch set.
-2. State which patch mode you used: `privacy-only`, `workflow`, `preferred-mods`, or `combined`.
-3. Include the SK Protect commit or release, distribution, Node.js version, and `mksquashfs -version` output.
-4. Remove usernames, account details, tokens, local private paths, server addresses, and launcher logs that contain private data.
-5. Explain whether the result came from an automated check or a manual launcher test.
-
-Security reports should follow [SECURITY.md](SECURITY.md), not a public issue.
+- Report incorrect version or loader compatibility.
+- Improve clear, accessible interface text.
+- Add reproducible fixtures for patch anchors and failure cases.
+- Improve installation safety, documentation, or rollback instructions.
+- Review privacy claims against the code and threat model.
 
 ## Pull requests
 
-- Keep changes version-specific and guarded. A missing or repeated upstream anchor must stop the build.
-- Do not commit an AppImage, ASAR, extracted SKlauncher source, account data, instance data, worlds, logs, or proprietary assets.
-- Preserve each standalone patch and the combined build.
-- Add or update verification for every patch transformation.
-- Run `./test.sh` and report the result. If you have a legally obtained compatible 4.0 AppImage, also build every mode and test with a disposable profile. State the exact upstream version.
-- Separate observed behavior from conclusions inferred from source.
-- Keep UI controls keyboard accessible, labelled, understandable without colour, and usable at normal zoom.
+1. State the user-visible behavior and the SKlauncher version it targets.
+2. Keep each patch guarded by exact version and source anchors.
+3. Include focused automated checks where practical, and summarize the commands you ran.
+4. Do not add SKlauncher binaries, extracted bundles, ASAR files, accounts, tokens, profiles, worlds, or private logs.
+5. Keep public documentation accurate and distinguish code behavior from assumptions.
 
-By contributing, you affirm that you have the right to submit your work. The project licence is still awaiting an explicit maintainer choice; substantial contributions should wait until that decision is recorded in `LICENSE`.
-
-## Developer test matrix
-
-Run the repository-only checks:
-
-```bash
-./test.sh
-```
-
-With an official source AppImage, create all four outputs at distinct paths:
-
-```bash
-./patch.sh privacy-only ./SKlauncher-4.0.57-x86_64.AppImage ./out/privacy.AppImage
-./patch.sh workflow ./SKlauncher-4.0.57-x86_64.AppImage ./out/workflow.AppImage
-./patch.sh preferred-mods ./SKlauncher-4.0.57-x86_64.AppImage ./out/preferred.AppImage
-./patch.sh combined ./SKlauncher-4.0.57-x86_64.AppImage ./out/combined.AppImage
-```
-
-Use a fresh directory with `run-isolated.sh` for each launch. The manual checks and expected evidence are tracked in [docs/TESTING.md](docs/TESTING.md).
+By contributing, you confirm that you have the right to submit your work under the project's MIT license. The license does not grant rights to SKlauncher's proprietary code, assets, or trademarks.
